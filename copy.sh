@@ -22,6 +22,7 @@ cp ../jslib/tests/lws/html/HEAP-43672-feng/test-new-2.html  new/2/
 cp ../jslib/tests/lws/html/HEAP-43672-feng/test-new-3.html  new/3/
 cp ../jslib/tests/lws/html/HEAP-43672-feng/test-new-4.html  new/4/
 
+
 cp ../jslib/tests/_lws_docroot_/container.js reg/1/
 cp ../jslib/tests/_lws_docroot_/container.js reg/2/
 cp ../jslib/tests/_lws_docroot_/container.js reg/3/
@@ -31,5 +32,13 @@ cp ../jslib/tests/_lws_docroot_/container.js new/2/
 cp ../jslib/tests/_lws_docroot_/container.js new/3/
 cp ../jslib/tests/_lws_docroot_/container.js new/4/
 
+cp ../jslib/tests/_lws_docroot_/BB.css reg/1/
+cp ../jslib/tests/_lws_docroot_/BB.css reg/2/
+cp ../jslib/tests/_lws_docroot_/BB.css reg/3/
+
+cp ../jslib/tests/_lws_docroot_/BB.css new/1/
+cp ../jslib/tests/_lws_docroot_/BB.css new/2/
+cp ../jslib/tests/_lws_docroot_/BB.css new/3/
+cp ../jslib/tests/_lws_docroot_/BB.css new/4/
 
 # window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/auryc.lib.js';

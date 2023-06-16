@@ -1,0 +1,1158 @@
+html,body,#anchorContainer {
+    display:flex;
+    justify-content:center;
+    width:100%;
+    padding:0;
+    margin:0;
+}
+#siteContainer {
+    max-width:100%;
+    width: 100%;
+    margin:0px;
+}
+#siteContainer .site-wrapper {
+    max-width: 100%;
+    width: 100%;
+    min-height:unset !important;
+    margin: 83px 0px 0px 0px;
+}
+.site-wrapper > div > *, .content-container, .content-container > div, .content-section, .content-container > div, .block-maindivÃƒâ€šÃ‚Â {
+    max-width:100%;
+    width: 100%;
+    flex-wrap:wrap;
+    border: none;
+}
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    float: unset;
+    padding: unset;
+    min-height:unset;
+    width: 100%;
+}
+.row .content-container > div {
+    min-height: 200px;
+}
+.content-container > div {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* margin: 0 auto; */
+}
+.bitl-block {
+    max-width:100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin:  auto;
+}
+.bitl-block.consumerimagetextblock {
+    max-width:380px;
+    margin: 0 auto;
+    justify-content: flex-start;
+    /* display: flex; */
+}
+.bitl-block.consumerdealcardblock {
+    margin-bottom: 20px;
+}
+.consumerdealcardblock .content-container .content-section {
+    background-color:#fff;
+    max-width: 380px!important;
+}
+.consumerdealcardblock .content-container .content-section .block-maindiv {
+    display:  flex;
+    flex-direction:  column;
+}
+.content-section {
+    max-width: 1280px!important;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.content-section .block-content {
+    max-width: 1280px;
+}
+p {
+    padding-bottom:10px;
+}
+/**
+  Styles
+**/
+
+/*-------------------------TYPOGRAPHY-------------------------*/
+html, body, a, b, p, div, span, li, h1, h2, h3, h4, h5, h6, header {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(47,35,19,0.9);
+    line-height: 1.5;
+}
+h1 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    text-transform: capitalize;
+}
+.Title-Area .block-title h1, 
+.bitl-block .block-title h1,
+.row .content-container .block-maindiv .block-title h1 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+    font-size: 48px;
+    line-height: 1.25;
+    font-weight: 700 !important; /* !important to override res tool jquery css */
+    text-transform: capitalize;
+}
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: capitalize;
+    text-align: center;
+    border: none;
+}
+h3 {
+    font-size: 24px;
+    text-transform: capitalize;
+}
+a {
+    font-weight: bold;
+    color: #378277;
+    text-decoration: none;
+}
+a:hover {
+    font-weight: bold;
+    color: #378277;
+    text-decoration: none!important;
+    /* border-bottom: 2px solid #378277; */
+}
+/*-------------------------COLORS-------------------------*/
+body {
+    background-color: rgba(47, 35, 19, 0.15);
+}
+/*-----Web Colors-----*/
+.primaryText {
+    color: #378277;
+}
+.primaryBG {
+    background-color: #378277;
+}
+.secondaryText {
+    color: #F76049;
+}
+.secondaryBG {
+    background-color: #F76049;
+}
+.baseText {
+    color: rgba(47, 35, 19, 0.9);
+}
+.baseBG {
+    background-color: rgba(47, 35, 19, 0.9);
+}
+/*-----Color Variants-----*/
+.base-65-text {
+    color: rgba(47, 35, 19, 0.65);
+}
+.base-65-BG {
+    background-color: rgba(47, 35, 19, 0.65);
+}
+.base-30-text {
+    color: rgba(47, 35, 19, 0.3);
+}
+.base-30-BG {
+    background-color: rgba(47, 35, 19, 0.3);
+}
+.base-15-text {
+    color: rgba(47, 35, 19, 0.15);
+}
+.base-15-BG {
+    background-color: rgba(47, 35, 19, 0.15);
+}
+
+/*-------------------------BUTTONS-------------------------*/
+.vertical .block-buttontext {
+    display: flex;
+    justify-content: center;
+}
+.horizontal .block-buttontext {
+    display: flex;
+}
+/*-----Primary Buttons-----*/
+button.primary, .block-buttontext, . a.specials-hotel-select-link, .specials-hotel-select a {
+    background-color: transparent;
+    font: bold 20px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #378277;
+    border-radius: 4px;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+button.primary:hover, .block-buttontext:hover, .specials-hotel-select:hover, .specials-hotel-select a:hover {
+    background-color: #378277;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+    box-shadow: 0 12px 12px -8px rgba(0,0,0,.3);
+    margin-top: -2px;
+    margin-bottom: 2px;
+    text-decoration:none;
+    cursor: pointer;
+}
+button.primary:active, .block-buttontext:active, .specials-hotel-select:active, .specials-hotel-select a:active {
+    color: rgba(255,255,255,.9);
+    border-color: rgba(0,0,0,.15);
+    box-shadow: inset 0 1px 10px rgba(0,0,0,.3);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+button.primary.action--primary {
+    background-color: #378277;
+    color: #fff;
+    border-color: transparent;
+}
+.block-buttontext {
+    display:flex;
+    justify-content:center;
+    padding: 10px 20px;
+    border: 2px solid #378277;
+    border-radius: 4px;
+    background-color: #378277;
+    cursor: pointer;
+    font: 700 20px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: #ffffff;
+    transition: all .2s ease;
+    text-transform: capitalize;
+}
+.block-buttontext a {
+    color: #ffffff;
+    font: bold 20px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+.block-buttontext a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+.button:hover:enabled {
+    margin-top: -2px;
+    margin-bottom: 2px;
+}
+/*-----Secondary Buttons for Dark Backgrounds-----*/
+.bitl-block.consumervaluepropblock .block-buttontext {
+    background-color: rgba(47,35,19,.3);
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+    border-color: #fff;
+}
+/*-----Secondary Buttons-----*/
+button.secondary, .Form__Element button[type="submit"] {
+    background-color: transparent;
+    font: bold 20px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: #378277;
+    padding: 10px 20px;
+    border: 2px solid #378277;
+    border-radius: 4px;
+    transition: all .2s ease;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+button.secondary:hover, .Form__Element button[type="submit"]:hover, .bitl-block.consumervaluepropblock .block-buttontext:hover {
+    background-color: #378277;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+    box-shadow: 0 12px 12px -8px rgba(0,0,0,.3);
+    margin-top: -2px;
+    margin-bottom: 2px;
+    border-color: #378277;
+    cursor: pointer;
+}
+button.secondary:active, .Form__Element button[type="submit"]:active, .bitl-block.consumervaluepropblock .block-buttontext:active {
+    color: rgba(255,255,255,.9);
+    border-color: rgba(0,0,0,.15);
+    box-shadow: inset 0 1px 10px rgba(0,0,0,.3);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/*-----Disabled Buttons-----*/
+button.disabled, .block-buttontext.disabled, a.specials-hotel-select-link.disabled {
+    font-weight: normal;
+    background-color: rgba(0,0,0,.1);
+    border-width: 1px;
+    border-color: rgba(0,0,0,.30);
+    color: rgba(0,0,0,.30);
+}
+button.disabled:hover, .block-buttontext.disabled:hover, a.specials-hotel-select-link.disabled:hover {
+    background-color: rgba(0,0,0,.1);
+    text-shadow: none;
+    box-shadow: none;
+    cursor: not-allowed;
+    text-decoration:none;
+}
+/*-------------------------BOX HEADINGS-------------------------*/
+.boxOfText {
+    border: 1px solid rgba(0,0,0,.15);
+    padding: 20px;
+}
+.boxOfText h3 {
+    background-color: rgba(0,0,0,.5);
+    font-size: 24px;
+    color: #fff;
+    padding: 10px 20px;
+    margin: -20px -20px 0;
+}
+.boxOfText h4 {
+    font-size: 20px;
+    margin: 20px 0 10px;
+}
+.boxOfText h4.important {
+    color: #F76049;
+}
+.boxOfText p {
+    margin: 0 0 20px;
+}
+
+/**
+  Blocks
+**/
+
+/** this is for background images **/
+.bitl-block.consumerdealcardblock .content-container .content-section .block-maindiv .block-content .block-textblock {
+    padding: 40px 0 10px 0;
+    justify-content:  space-between;
+    text-shadow: none;
+}
+.vertical {
+    margin: auto;
+}
+.horizontal {
+}
+
+/*-------------------------CONSUMER DEAL CARDS-------------------------*/
+/*
+.consumerdealCardList-block, .consumerstartpage-content {
+    margin-bottom:20px;
+}
+*/
+.bitl-block .content-section {
+    padding: 20px;
+    flex-direction: column;
+    margin: auto;
+    max-width:380px;
+}
+.consumerimagetextblock .content-section {
+    padding:0 20px;
+}
+.vertical .col-3 {
+    padding:0;
+}
+.vertical .consumerdealcardblock {
+    background-color: rgb(255,255,255);
+    padding: 20px;
+    max-width: 300px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:  wrap;
+    justify-content:  space-between;
+}
+.block.bitl-block .vertical, .block.bitl-block .horizontal {
+    background-color: inherit;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.bitl-block .vertical .consumerdealcardblock .block-maindiv {
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+}
+.bitl-block .vertical .consumerdealcardblock .block-maindiv .block-textblock {
+    padding-bottom: 0;
+    text-shadow: none;
+}
+.consumerdealcardblock .block-textblock {
+    padding-top:61px;
+}
+.block h2 {
+/*
+    padding-top: 30px;
+*/
+    text-align:  center;
+    border-bottom: none;
+}
+.block .block-maindiv img {
+    width: 340px;
+    height: 173px;
+    object-fit: cover;
+}
+.block-textblock {
+    display: flex;
+    justify-content:  space-between;
+    margin-bottom: 0;
+}
+.deals-rating {
+    text-align: left;
+    display: flex;
+    flex-direction:  column;
+    align-items:  flex-start;
+}
+.deals-rating:before {
+    content: "Hotel Class";
+    font-size: 12px;
+    color: rgba(47, 35, 19, 0.65);
+}
+.block .block-textblock > #rating {
+    align-self:flex-start;
+}
+.block .block-textblock > #Price {
+    align-self:flex-end;
+    text-align: right;
+}
+.block .deals-price {
+    font-size:24px;
+    font-weight:bold;
+    vertical-align: top;
+    display: flex;
+    flex-flow: column;
+}
+.deals-price {
+    text-align:right;
+}
+.deals-price:before {
+    content: "Hotel Class";
+    font-size: 12px;
+    color: rgba(47, 35, 19, 0.65);
+    font-weight:normal;
+}
+
+/*-------------------------HOME PAGE-------------------------*/
+.Title-Area .content-container {
+    min-height: 350px;
+}
+.Title-Area .content-container div {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+}
+.Title-Area .block-maindiv .block-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:  center;
+    margin: auto;
+}
+.Title-Area .vertical, .Title-Area .horizontal {
+    min-height:350px;
+    justify-content: space-around;
+}
+.Title-Area .block-title, .Title-Area .block-textblock {
+    flex: 0 0 100%;
+    justify-content:center;
+    text-align: center;
+}
+.Title-Area .block-title{
+    /* padding-top:40px; */
+}
+
+.Title-Area .block-textblock {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+    padding-bottom: 20px;
+}
+/*-------------------------EMAIL TOAST-------------------------*/
+.block.containerblock.opt-in {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: calc(100% - 20px);
+    max-width: 375px;
+    background-color: #fff;
+    padding: 20px 20px 40px;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0px -2px 4px rgba(47,35,19,0.15);
+}
+.block.containerblock.opt-in > div > div {
+    display: flex;
+    flex-direction: column;
+}
+.block.containerblock.opt-in h2 {
+  color: #f76049;
+  padding: 0;
+  margin: 0;
+}
+.block.containerblock.opt-in aside {
+  font-size: .875em;
+  margin: 10px 0 0;
+}
+.block.containerblock.opt-in .Form__MainBody {
+  margin-top: 20px;
+}
+section.Form__Element {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.Form__Element.FormTextbox {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.Form__Element.FormTextbox label {
+  position: absolute;
+  background-color: #fff;
+  font-size: .75em;
+  line-height: 1;
+  color: rgba(47,35,19,0.65);
+  padding: 0 5px;
+  margin: -6px 5px 0 5px;
+}
+.Form__Element.FormTextbox input {
+  height: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  line-height: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(47,35,19,0.65);
+}
+.Form__Element.FormTextbox input:focus {
+  color: rgba(47,35,19,0.9);
+  border-color: rgba(47,35,19,0.9);
+}
+/**** form placeholder */
+      .Form__Element.FormTextbox input::-webkit-input-placeholder {
+        color: rgba(47,35,19,0.65);
+      }
+      .Form__Element.FormTextbox input:focus::-webkit-input-placeholder {
+        color: transparent;
+      }
+      .Form__Element.FormTextbox input::-moz-placeholder {
+        color: rgba(47,35,19,0.65);  
+      }
+      .Form__Element.FormTextbox input:focus::-moz-placeholder {
+        color: transparent;
+      }
+      .Form__Element.FormTextbox input:-ms-input-placeholder {
+        color: rgba(47,35,19,0.65);
+      }
+      .Form__Element.FormTextbox input:focus:-ms-input-placeholder {
+        color: transparent;
+      }
+      .Form__Element.FormTextbox input:-moz-placeholder {
+        color: rgba(47,35,19,0.65);
+      }
+      .Form__Element.FormTextbox input:focus:-moz-placeholder {
+        color: transparent;
+      }
+.Form__Element button[type="submit"] {
+    -webkit-appearance: none;
+    font-size: .875em;
+    line-height: 1.6rem;
+    padding: 10px;
+    margin: 0 0 0 10px;
+}
+.block.containerblock.opt-in .close-toaster {
+    align-self: flex-end;
+    background-image: url(/4a3e14/siteassets/content/images/icons/exit.png);
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    text-indent: -9999px;
+    cursor: pointer;
+    margin: -10px -10px 0 0;
+}
+/*--------Form Validation & Success----------*/
+.Form__Element__ValidationError, .Form__Element.FormTextbox.ValidationFail label, .Form__Element.FormTextbox.ValidationFail input {
+    color: #e50000;
+}
+.Form__Element.FormTextbox.ValidationFail input {
+    border-color: #e50000;
+}
+.Form__Status .Form__Status__Message.Form__Success__Message p {
+    font-weight: 700;
+    color: #f76049;
+    text-align: center;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+/*-------------------Need to figure out how to hide the form/input/button on success
+.Form__Status + .Form__MainBody {
+  display: none;
+}
+*/
+
+/*-------------------Need to rethink how validation works + make it so display is block on page reload.
+  
+.Form__Element.FormTextbox.ValidationFail + button[type="submit"] {
+    background-color: rgba(0,0,0,.15);
+    color: rgba(0,0,0,.3);
+    border-color: rgba(0,0,0,.3);
+    cursor: not-allowed;
+}
+*/
+
+
+
+/*--------Close Toast (needs to be converted to SVG when Epi supports them)---------*/
+.block.containerblock.opt-in .close-toaster:hover {
+    background-image: url(/4a3e14/siteassets/content/images/icons/exit-hover.png); /* needs to be converted to SVG when Epi supports them */
+}
+.block.containerblock.opt-in .close-toaster h2 {
+    display: none;
+}
+/*-------------------------VALUEPROP BLOCKS-------------------------*/
+.bitl-block h3, .bitl-block .block-textblock, .bitl-block .block-textblock span, .bitl-block.consumervaluepropblock .no-image h3, .bitl-block.consumervaluepropblock .no-image .block-textblock {
+    color:#fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+}
+.bitl-block .vertical h3, .bitl-block .vertical .block-textblock {
+    color:#fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+    justify-content: center;
+}
+.bitl-block .horizontal h3, .bitl-block .horizontal .block-textblock {
+    padding: 0 0 20px 0;
+    color:#fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+    justify-content: left;
+    text-align:  left;
+}
+.bitl-block h3 {
+    font-size: 32px;
+    line-height: 1.5;
+}
+.bitl-block .vertical .block-textblock {
+    padding-bottom: 20px;
+}
+.bitl-block.consumerdealcardblock .horizontal h3, .bitl-block.consumerdealcardblock .horizontal .block-textblock {
+    text-align:center;
+}
+.block-textblock span {
+    color:#fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+}
+.bitl-block.consumerdealcardblock h3, .bitl-block.consumerimagetextblock h3, .bitl-block.consumerimagetextblock .block-textblock {
+    color:rgba(47,35,19,0.9);
+    text-shadow:none;
+    word-break: normal;
+}
+.bitl-block.consumerimagetextblock h3 {
+    padding:20px 0 0 0;
+}
+.bitl-block .consumerdealcardblock .block-content {
+    margin:0;
+}
+.bitl-block .consumerdealcardblock .block-content {
+    padding: 41px 0 10px 0;
+}
+.block-textblock {
+    text-align: center;
+}
+.block-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+    margin: auto;
+}
+.bitl-block.consumerdealcardblock .block-content {
+    margin:0;
+}
+.bitl-block.consumerdealcardblock .horizontal .block-content {
+    align-items:center;
+}
+.consumervalueprop-blocks .bitl-block:nth-child(even) {
+    background-color: rgba(47, 35, 19, 0.3);
+}
+.consumervalueprop-blocks > div > .bitl-block:nth-child(odd) {
+    background-color: rgba(47, 35, 19, 0.65);
+}
+.consumervaluepropblock > .content-container > .vertical, .Title-Area > .content-container > .verrtical {
+    padding: 40px 20px;
+}
+/*-------------------------CONSUMER IMAGE TEXT LIST BLOCK-------------------------*/
+.consumerimagetextlistblock . {
+    width:1280px;
+    display:  flex;
+    flex-direction: row;
+    flex-wrap: nowrap!important;
+    justify-content:  space-between;
+    margin: 20px auto;
+}
+.consumerimagetextlistblock {
+    width:100%;
+    display:  flex;
+    flex-direction: row;
+}
+
+.consumerimagetextlistblock h2 {
+    padding-top: 20px;
+    text-align:  center;
+    border-bottom: none;
+}
+.consumerimagetextlistblock .block-maindiv img {
+    width:100%;
+    height: 200px;
+    object-fit:  cover;
+}
+/*-------------------------MAP-------------------------*/
+.consumerbingmapblock h1 {
+    display:none;
+}
+.consumerbingmapblock {
+    height:250px;
+    overflow: hidden;
+    padding-top: 20px;
+}
+.consumerbingmapblock .content-section {
+    width:100%!important;
+    max-width:100%!important;
+    padding: 0!important;
+}
+/*-------------------------DESTINATION DEALS-------------------------*/
+.specials-hotel-results {
+    display:none;
+}
+.specials-hotel-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+.specials-hotel-list .specials-hotel {
+    display: flex;
+    /* flex-flow: row nowrap; */
+    flex-direction:  column;
+    max-width: 1280px;
+    min-width: 1280px;
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px auto;
+}
+.specials-hotel-list .specials-hotel .specials-hotel-info {
+    width: 100%;
+    display: flex;
+    align-content: space-between;
+    z-index:  1;
+}
+.specials-hotel-list .specials-hotel .specials-hotel-details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+.specials-hotel-list .specials-hotel a.specials-hotel-description-link {
+    align-self: flex-start;
+    font-size: 20px;
+    color: rgba(47,35,19,0.9);
+    position: absolute;
+    margin-top: 21px;
+    max-width: 500px;
+}
+.specials-hotel-description-link:hover {
+    border:none;
+}
+
+.specials-hotel-list .specials-hotel a.specials-hotel-description-link::after{
+    font-size: 12px;
+    font-weight:normal;
+    color: rgba(47,35,19,0.65);
+    display:block;
+    margin-top:130px;
+}
+.specials-hotel-list .specials-hotel img.specials-hotel-rating-image {
+    align-self: flex-start;
+    order: 5;
+}
+.specials-hotel-list .specials-hotel .specials-hotel-additional-info {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex: 200% 0 0;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align:  right;
+    height: 269px;
+    margin-top: -268px;
+}
+.specials-hotel-nights-info {
+    order: 2;
+    font-size:12px;
+    color:rgba(47,35,19,0.65);
+    margin-bottom: 20px;
+}
+.specials-hotel-depart-date {
+    font-size: 12px;
+    color: rgba(47,35,19,0.65);
+    margin-bottom: 36px;
+    margin-left: auto;
+    order:  4;
+}
+.specials-hotel-nights {
+    font-size:12px;
+    color:rgba(47,35,19,0.65);
+}
+.specials-hotel-additional-info :nth-child(2) {order: 1;padding-bottom: 0;}
+.specials-hotel-additional-info :nth-child(3) {order: 3;}
+
+.specials-hotel-groupname {
+    color:#f76049;
+    font-size: 16px;
+    font-weight:bold;
+    order: 3;
+    margin-left: auto;
+    padding-bottom: 95px;
+    padding-top: 42px;
+}
+.specials-hotel-list .specials-hotel .specials-hotel-additional-info .specials-hotel-price-summary, .specials-hotel-list .specials-hotel .specials-hotel-additional-info .specials-hotel-price {
+    font-weight: bold;
+    font-size: 24px;
+}
+.specials-hotel-list .specials-hotel .specials-hotel-additional-info .specials-hotel-select {
+    margin-top: 146px;
+    border: 2px solid #378277;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #378277;
+    width: 300px;
+    text-align:  center;
+    text-transform: capitalize;
+    z-index: 1;
+}
+.specials-hotel-list .specials-hotel .specials-hotel-additional-info .specials-hotel-select a {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    color:#fff;
+}
+.specials-hotel-list .specials-hotel h4.specials-hotel-short-description {
+    font-size: 12px;
+    color:rgba(47,35,19,0.65);
+    order: 1;
+}
+.specials-hotel-list .specials-hotel .specials-hotel-info-image-placeholder {
+    padding-right: 20px;
+}
+.specials-hotel-list .specials-hotel .specials-hotel-info-image-placeholder img {
+    width: 520px;
+    height: 260px;
+    object-fit: cover;
+}
+.specials-hotel-list .specials-hotel a.specials-hotel-select-link {
+    padding: 5px 160px;
+}
+.consumerimagetextlistblock h3 {
+    padding: 20px 0 0 0;
+}
+
+.row .content-container > div {
+    min-height:200px;
+    margin-bottom:20px;
+}
+.row  .block-title, .row  .block-textblock {
+    flex: 0 0 100%;
+    justify-content:center;
+    text-align: center;
+}
+.row  .block-title {
+    margin: auto auto 0 auto;
+}
+.row  .block-textblock {
+    margin:0 auto auto auto;
+}
+.row  .block-title h3 {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+}
+.row  .block-textblock {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+}
+/*-------------Full Content Pages-------------*/
+body.BEACHBOUND-ConsumerFullContentPage .block-content {
+  align-items: flex-start;
+}
+body.BEACHBOUND-ConsumerFullContentPage h1 {
+  margin-top: 2em;
+}
+body.BEACHBOUND-ConsumerFullContentPage h2 {
+  font-size: 1.5em;
+  line-height: 1.5;
+  text-align: left;
+  margin: .8333em 0 .41667em;
+}
+body.BEACHBOUND-ConsumerFullContentPage h3 {
+  font-size: 1.25em;
+  line-height: 1.5;
+  color: rgba(47,35,19,0.9);
+  text-transform: capitalize;
+  margin: 0 0 .5em;
+}
+body.BEACHBOUND-ConsumerFullContentPage p {
+  margin: 0 0 1.25em;
+}
+body.BEACHBOUND-ConsumerFullContentPage strong {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+body.BEACHBOUND-ConsumerFullContentPage ul {
+  padding: 0 4em 1.25em;
+}
+body.BEACHBOUND-ConsumerFullContentPage .youtubediv {
+  display: flex;
+  justify-content: center;
+}
+/*-------------IE-------------*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .specials-hotel-list .specials-hotel {
+        height:300px;
+    }
+    .consumerimagetextblock .block-maindiv {
+        max-width:300px;
+    }
+    @media screen and (max-width: 768px) { 
+        .specials-hotel-list .specials-hotel {
+            max-height:530px;
+        }
+    }
+}
+
+/*-------------------------Devices-------------------------*/
+@media screen and (max-width: 1280px) {               /*---- desktop ----*/
+    .specials-hotel-list .specials-hotel {
+        width:100%;
+    }
+    .specials-hotel-list .specials-hotel a.specials-hotel-description-link {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 768px) {               /*---- portrait tablet ----*/
+    a[href^="tel"], a[href^="sms"] {
+        text-decoration: none;
+        pointer-events: none;
+        cursor: default;
+    }
+    h3 {
+        font-size: 28px;
+    }
+    
+    #siteContainer .site-wrapper {
+        margin:99px 0 0 0;
+    }
+    .BEACHBOUND-ConsumerStartPage #siteContainer .site-wrapper {
+        margin:53px 0 0 0!important;
+    }
+    .content-section {
+        padding: 20px!important;
+        width: 100%!important;
+    }
+    .content-section .content-section {
+        padding:0!important;
+    }
+    .consumerstartpage-description {
+        top:280px;
+    }
+    .block-content .block-title h2 {
+        text-align: left;
+        font-size: 24px!important;
+    }
+    .block-content .block-title h3 {
+        font-size: 32px!important;
+    }
+    .block-content .block-title h1 {
+        font-size: 48px!important;
+    }
+    .vertical .block-buttontext, .horizontal .block-buttontext {
+        justify-content: center;
+    }
+    /*-------------------------VALUEPROP BLOCKS-------------------------*/
+    .consumervaluepropblock .vertical .block-textblock {
+        text-align: left;
+    }
+    .consumervaluepropblock .block-maindiv {
+        padding: 20px 0!important;
+    }
+    .consumervaluepropblock h3, .consumervaluepropblock .block-textblock {
+        padding:20px;
+    }
+    .consumervaluepropblock.valueProp h3, .consumervaluepropblock.valueProp .block-textblock, .consumervaluepropblock.valueProp .block-maindiv .block-content {
+        padding: 0 20px;
+    }
+    /*-------------------------CONSUMER DEAL CARDS-------------------------*/
+    .consumerdealcardlistblock .block-maindiv {
+        width: 100%!important;
+    }
+    .block .block-maindiv img {
+        width: 100%;
+    }
+    .consumerdealcardblock .content-section {
+        padding:10px!important;
+    }
+    .bitl-block.consumerimagetextblock {
+        width:100%;
+        max-width:100%;
+    }
+    .consumerdealcardblock .content-container .content-section {
+        max-width: 100%!important;
+    }
+    /*-------------------------DESTINATION DEALS-------------------------*/
+    .ddlpage-description {
+        text-align: center;
+        text-align: center;
+        position: absolute;
+        top: 271px;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        color:#fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+    }
+    .specials-hotel-list .specials-hotel {
+        display: flex!important;
+        flex-direction: column!important;
+        width: 100%!important;
+        padding: 10px;
+        min-width: 300px;
+        align-self: center;
+    }
+    .ddlpage-title h1 {
+        text-align: center;
+        position: absolute;
+        top: 214px;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        font-size: 50px;
+        color:#fff;
+    text-shadow: 0 2px 4px rgba(47,35,19,.3);
+    }   
+    .specials-hotel-list .specials-hotel .specials-hotel-info {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .specials-hotel-list .specials-hotel img.specials-hotel-info-image {
+        width: 100%;
+        margin: auto;
+    }
+    .specials-hotel-list .specials-hotel .specials-hotel-info-image-placeholder {
+        padding-right: 0;
+        width:  100%!important;
+    }
+    .specials-hotel-list .specials-hotel h4.specials-hotel-short-description {
+        padding-top: 10px;
+    }
+    .specials-hotel-list .specials-hotel a.specials-hotel-description-link {
+        align-self: center;
+        padding-top: 0;
+        padding-bottom: 20px;
+        order: 2;
+        position: relative;
+        width: 100%;
+        margin-top: 0;
+    }
+    .specials-hotel-list .specials-hotel a.specials-hotel-select-link {
+        padding: 5px 40%;
+        width: 100%;
+    }
+    .specials-hotel-list .specials-hotel img.specials-hotel-rating-image {
+        order: 4;
+    }
+    .specials-hotel-list .specials-hotel .specials-hotel-additional-info {
+        width: 100%;
+        margin-top: -90px;
+        height: auto;
+    }
+    .specials-hotel-list .specials-hotel .specials-hotel-details {
+        justify-content: flex-end;
+        width: 100%;
+    }
+    .specials-hotel-list {
+        padding: 0;
+        width: 100%;
+    }
+    .specials-hotel-groupname {
+        margin-left: 0;
+        align-self: center;
+        position: relative;
+        order: 2;
+        padding-bottom: 60px;
+        padding-top: 0;
+    }
+    .specials-hotel-depart-date {
+        margin-left: 0;
+        order: 4;
+        align-self: center;
+        margin-bottom: 0;
+        margin-top: 10px;
+        position: relative;
+    }
+    .specials-hotel-nights-info {order:1;padding-bottom: 0;margin-bottom: 0;}
+    .specials-hotel-price-summary {order:3;}
+    .specials-hotel-select {order:2;}
+    .specials-hotel-list .specials-hotel .specials-hotel-additional-info .specials-hotel-select {
+        margin-top: 42px;
+        width: 100%;
+        border: 2px solid #378277;
+        padding: 5px;
+        border-radius: 4px;
+        background-color: #378277;
+    }
+} 
+@media screen and (max-width: 567px) {               /*---- mobile ----*/
+    #siteContainer .site-wrapper {
+        margin:53px 0 0 0;
+    }
+    /*-------Res Tool------*/
+    .res-widget-container .departing-from-wrap.has-calendar,
+    .res-widget-container .going-to-wrap.has-calendar,
+    .res-widget-container .depart-date-wrap.has-calendar,
+    .res-widget-container .return-date-wrap.has-calendar,
+    .res-widget-container .rooms-wrap .number-of-rooms-wrap-widget.has-calendar,
+    .res-widget-container .adults-wrap-widget.has-calendar,
+    .res-widget-container .children-wrap-widget.has-calendar,
+    .res-widget-container select.res-widget-children-drop {
+      width: 100%;
+      margin: 0 0 20px;
+    }
+    .res-widget-container .adults-wrap-widget.has-calendar,
+    .res-widget-container .children-wrap-widget.has-calendar {
+      width: calc(50% - 10px);
+      margin-bottom: 0;
+    }
+    .res-widget-container .children-wrap-widget.has-calendar {
+      float: right;
+    }
+    .res-widget-container .res-widget-buttons {
+      -webkit-appearance: none;
+      border-radius: 0 4px 4px 0;
+    }
+    .res-widget-buttons [value="Hotel + Flight"] {
+      border-radius: 4px 0 0 4px;
+    }
+    /*-----Email Toast-----*/
+    .block.containerblock.opt-in {
+      right: 10px;
+      padding-bottom: 125px;
+    }
+
+}
+.ddlPageAngularResTool-block .content-section{display:block;max-width:1280px;}
+.angular-res-tool {display:block;max-width:660px;margin:auto;}
