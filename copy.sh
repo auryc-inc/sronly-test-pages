@@ -13,9 +13,9 @@ mkdir -p new/3
 mkdir -p new/4
 mkdir -p new/5
 
-cp ../jslib/tests/lws/html/HEAP-43672-feng/test-new-1.html  reg/1/
-cp ../jslib/tests/lws/html/HEAP-43672-feng/test-new-2.html  reg/2/
-cp ../jslib/tests/lws/html/HEAP-43672-feng/test-new-3.html  reg/3/
+cp ../jslib/tests/lws/html/HEAP-43672-feng/test-reg-1.html  reg/1/
+cp ../jslib/tests/lws/html/HEAP-43672-feng/test-reg-2.html  reg/2/
+cp ../jslib/tests/lws/html/HEAP-43672-feng/test-reg-3.html  reg/3/
 
 cp ../jslib/tests/lws/html/HEAP-43672-feng/test-new-1.html  new/1/
 cp ../jslib/tests/lws/html/HEAP-43672-feng/test-new-2.html  new/2/
@@ -30,3 +30,6 @@ cp ../jslib/tests/_lws_docroot_/container.js new/1/
 cp ../jslib/tests/_lws_docroot_/container.js new/2/
 cp ../jslib/tests/_lws_docroot_/container.js new/3/
 cp ../jslib/tests/_lws_docroot_/container.js new/4/
+
+
+# window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/auryc.lib.js';
