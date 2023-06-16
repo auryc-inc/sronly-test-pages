@@ -41,4 +41,15 @@ cp ../jslib/tests/_lws_docroot_/BB.css new/2/
 cp ../jslib/tests/_lws_docroot_/BB.css new/3/
 cp ../jslib/tests/_lws_docroot_/BB.css new/4/
 
+cp ../jslib/tests/_lws_docroot_/test.jpg  reg/1/
+cp ../jslib/tests/_lws_docroot_/test.jpg  reg/2/
+cp ../jslib/tests/_lws_docroot_/test.jpg  reg/3/
+
+cp ../jslib/tests/_lws_docroot_/test.jpg  new/1/
+cp ../jslib/tests/_lws_docroot_/test.jpg  new/2/
+cp ../jslib/tests/_lws_docroot_/test.jpg  new/3/
+cp ../jslib/tests/_lws_docroot_/test.jpg  new/4/
+
+
+
 # window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
