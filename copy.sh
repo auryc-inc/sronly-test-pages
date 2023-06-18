@@ -6,7 +6,7 @@ OUTPUT="index.html"
 
 i=0
 echo "<html><body style='margin: 0 auto; width: 40em' >"  > $OUTPUT
-echo "<div style='position:absolute;padding: 1em; right: 0;margin: 1em 2em;font-size: 20px; color: #fff'; background: darkslategrey;>"  >>$OUTPUT
+echo "<div style='position:absolute;padding: 1em; right: 0;margin: 1em 2em;font-size: 20px; color: #fff; background: darkslategrey;'>"  >>$OUTPUT
 echo "<OL>" >> $OUTPUT
 echo "    <li>srOnlyDisableTextCaptureEnabled</li>" >> $OUTPUT
 echo "    <li>disableTextCapture</li>" >> $OUTPUT
