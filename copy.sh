@@ -5,7 +5,7 @@ HTTP="/"
 OUTPUT="index.html" 
 
 i=0
-echo "<div style='position:absolute;right: 0;padding: 1em 2em;font-size: 20px; border: 1pz solid gray'>"  >$OUTPUT
+echo "<div style='position:absolute;right: 0;padding: 1em 2em;font-size: 20px; border: 1px solid gray'>"  >$OUTPUT
 echo "<OL>" >> $OUTPUT
 echo "    <li>srOnlyDisableTextCaptureEnabled</li>" >> $OUTPUT
 echo "    <li>disableTextCapture</li>" >> $OUTPUT
