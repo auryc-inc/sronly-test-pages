@@ -5,7 +5,17 @@ HTTP="/"
 OUTPUT="index.html" 
 
 i=0
-echo "<UL>" > $OUTPUT
+echo "<div style='position:absolute;right: 0;padding: 1em;font-size: 20px;'>"  >$OUTPUT
+echo "<OL>" >> $OUTPUT
+echo "    <li>srOnlyDisableTextCaptureEnabled</li>li>" >> $OUTPUT
+echo "    <li>disableTextCapture</li>" >> $OUTPUT
+echo "    <li>ignoreHeapTextCapture</li>" >> $OUTPUT
+echo "    <li>isRedactTextEnabled</li>" >> $OUTPUT
+echo "    <li>disableSRTextCaptur</li>" >> $OUTPUT
+echo "</OL>" >> $OUTPUT
+echo "</div>" >> $OUTPUT
+
+echo "<UL>" >> $OUTPUT
 for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   path=`basename "$filepath"`
   echo "  <LI>$path</LI>" >> $OUTPUT
