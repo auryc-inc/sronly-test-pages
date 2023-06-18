@@ -12,7 +12,7 @@ echo "    <li>srOnlyDisableTextCaptureEnabled</li>" >> $OUTPUT
 echo "    <li>disableTextCapture</li>" >> $OUTPUT
 echo "    <li>ignoreHeapTextCapture</li>" >> $OUTPUT
 echo "    <li>isRedactTextEnabled</li>" >> $OUTPUT
-echo "    <li>disableSRTextCaptur</li>" >> $OUTPUT
+echo "    <li>disableSRTextCapture</li>" >> $OUTPUT
 echo "</OL>" >> $OUTPUT
 echo "</div>" >> $OUTPUT
 
