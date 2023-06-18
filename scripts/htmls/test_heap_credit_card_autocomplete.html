@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Heap data-heap-redact-attributes</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,500,700" rel="stylesheet"
+    type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <script data-cfasync="false" charset="utf-8">
+    (function (g) {
+      g.aurycReadyCb = g.aurycReadyCb || [];
+      var d = document,
+        i,
+        am = d.createElement("script"),
+        h = d.head || d.getElementsByTagName("head")[0],
+        aex = {
+          src: "container.js",
+          "data-cfasync": "false",
+          async: "true",
+          defer: "true",
+          "data-vendor": "userty",
+          "data-role": "container",
+          charset: "utf-8",
+        };
+      for (var attr in aex) {
+        am.setAttribute(attr, aex[attr]);
+      }
+      h.appendChild(am);
+    })(window);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <title>Credit Card Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Credit Card Form</h2>
+    <form id="creditCardForm">
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" name="ccNumber" maxlength="16" placeholder="Enter card number" required>
+      </div>
+      <div class="form-group">
+        <label for="cardName">Cardholder Name</label>
+        <input type="text" id="cardName" name="ccname" placeholder="Enter cardholder name" required>
+      </div>
+      <div class="form-group">
+        <label for="expiryDate">Expiry Date</label>
+        <input type="text" id="expiryDate" name="ccExpire" maxlength="5" placeholder="MM/YY" required>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="number" id="cvv" name="cvv" minlength="3" maxlength="4" placeholder="Enter CVV" required>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div class="container">
+    <h2>Credit Card Form With Hint Only on utocomplete</h2>
+    <form id="creditCardForm">
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" autocomplete="ccNumber" maxlength="16" placeholder="Enter card number"
+          required>
+      </div>
+      <div class="form-group">
+        <label for="cardName">Cardholder Name</label>
+        <input type="text" id="cardName" autocomplete="ccname" placeholder="Enter cardholder name" required>
+      </div>
+      <div class="form-group">
+        <label for="expiryDate">Expiry Date</label>
+        <input type="text" id="expiryDate" autocomplete="expiration" maxlength="5" placeholder="MM/YY" required>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="number" autocomplete="cvv" minlength="3" maxlength="4" placeholder="Enter CVV" required>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div class="container">
+    <h2>as on California Pizza Kitchen </h2>
+
+    <form id="credit-card-form" class="_root_1pilh1" autocomplete="on" data-test-creditcardmodal="">
+
+
+      <div class="_container_1csiaz _input_1pilh1 _standard_1csiaz" data-test-form-field="cardNumber">
+        <div class="_labelInputContainer_1csiaz _labelInputContainerBase_1csiaz"
+          data-test-form-field-label-input="cardNumber">
+
+          <label class="_label_1csiaz" data-test-form-field-label="cardNumber" for="ember74-input">
+
+
+            Card Number
+
+
+            <!---->
+          </label>
+
+          <span class="_inputContainer_1csiaz">
+
+            <input inputmode="numeric" autocomplete="cc-number" id="ember74-input"
+              class="_textInput_1csiaz _textInputBase_1csiaz _inputBase_1csiaz ember-text-field ember-view"
+              data-test-form-field-input="cardNumber" type="text">
+
+
+
+            <!----> <span class="_container_1etitm  _iconRight_1csiaz" data-test-svg="unknown">
+              <svg width="34" height="24" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="_icon_1etitm " role="presentation">
+                <rect x=".25" y=".75" width="33.5" height="22.5" rx="1.75" fill="#DADADA" stroke="#DADADA"
+                  stroke-width=".5"></rect>
+                <path fill="#BDBCBC" d="M0 7h34v5H0z"></path>
+              </svg>
+            </span>
+
+
+          </span>
+
+        </div>
+
+
+
+        <div class="_helpMessageContainer_1csiaz"><!----><!----></div>
+
+      </div>
+
+
+      <div class="_inputRow_1pilh1">
+        <div class="_container_1csiaz _input_1pilh1 _standard_1csiaz" data-test-form-field="expDate">
+          <div class="_labelInputContainer_1csiaz _labelInputContainerBase_1csiaz"
+            data-test-form-field-label-input="expDate">
+
+            <label class="_label_1csiaz" data-test-form-field-label="expDate" for="ember76-input">
+
+
+              Exp. Date (MM/YY)
+
+
+              <!---->
+            </label>
+
+            <span class="_inputContainer_1csiaz">
+
+              <input inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" id="ember76-input"
+                class="_textInput_1csiaz _textInputBase_1csiaz _inputBase_1csiaz ember-text-field ember-view"
+                data-test-form-field-input="expDate" type="text">
+
+
+              <!----><!---->
+            </span>
+
+          </div>
+
+
+
+          <div class="_helpMessageContainer_1csiaz"><!----><!----></div>
+
+        </div>
+
+
+        <div class="_container_1csiaz _input_1pilh1 _standard_1csiaz" data-test-form-field="cvv">
+          <div class="_labelInputContainer_1csiaz _labelInputContainerBase_1csiaz"
+            data-test-form-field-label-input="cvv">
+
+            <label class="_label_1csiaz" data-test-form-field-label="cvv" for="ember78-input">
+
+
+              CVV
+
+
+              <!---->
+            </label>
+
+            <span class="_inputContainer_1csiaz">
+              <input pattern="^\d+$" name="cvv" data-test-selector="cvv" data-test-form-field-input="cvv" maxlength="4"
+                inputmode="numeric" autocomplete="cc-csc" aria-invalid="false" id="ember78-input"
+                class="_textInput_1csiaz _textInputBase_1csiaz _inputBase_1csiaz _textInput_1csiaz _textInputBase_1csiaz _inputBase_1csiaz ember-view"
+                type="text">
+              <!---->
+              <!----><!---->
+            </span>
+
+          </div>
+
+
+
+          <div class="_helpMessageContainer_1csiaz"><!----><!----></div>
+
+        </div>
+
+      </div>
+
+      <div class="_container_1csiaz _input_1pilh1 _standard_1csiaz" data-test-form-field="zipCode">
+        <div class="_labelInputContainer_1csiaz _labelInputContainerBase_1csiaz"
+          data-test-form-field-label-input="zipCode">
+
+          <label class="_label_1csiaz" data-test-form-field-label="zipCode" for="ember79-input">
+
+
+            Zip / Postal Code
+
+
+            <!---->
+          </label>
+
+          <span class="_inputContainer_1csiaz">
+            <input name="zipCode" data-test-selector="zipCode" data-test-form-field-input="zipCode"
+              autocomplete="postal-code" aria-invalid="false" id="ember79-input"
+              class="_textInput_1csiaz _textInputBase_1csiaz _inputBase_1csiaz _textInput_1csiaz _textInputBase_1csiaz _inputBase_1csiaz ember-view"
+              type="text">
+            <!---->
+            <!----><!---->
+          </span>
+
+        </div>
+
+
+
+        <div class="_helpMessageContainer_1csiaz"><!----><!----></div>
+
+      </div>
+
+      <div class="_input_1pilh1" data-test-creditcardmodal-savecard="">
+        <label class="_root_3o1w5w">
+          <input id="ember80" class="ember-checkbox ember-view _input_3o1w5w" data-test-checkbox-input=""
+            type="checkbox">
+          <span class="_inputAccent_3o1w5w" aria-hidden="true"></span>
+          <span data-test-checkbox-label="" class="_text_3o1w5w">Save card to account?</span>
+        </label>
+      </div>
+      <!----><!----><!---->
+    </form>
+  </div>
+
+  <div class="container">
+    <h2>Credit Card Form With no Hint anywhere</h2>
+    <form>
+      <div class="form-group">
+        <label>Card Number</label>
+        <input type="text" maxlength="16" placeholder="Enter card number" required>
+      </div>
+      <div class="form-group">
+        <label for="cardName">Cardholder Name</label>
+        <input type="text" id="cardName" name="cardName" placeholder="Enter cardholder name" required>
+      </div>
+      <div class="form-group">
+        <label>Expiry Date</label>
+        <input type="text" maxlength="5" placeholder="MM/YY" required>
+      </div>
+      <div class="form-group">
+        <label>CVV</label>
+        <input type="number" minlength="3" maxlength="4" placeholder="Enter CVV" required>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+
+</html>

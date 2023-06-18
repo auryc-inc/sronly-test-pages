@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title data-heap-redact-text="true">Heap masked title</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,500,700" rel="stylesheet"
+    type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <script data-cfasync="false"
+    charset="utf-8">; !function (a) { a.aurycReadyCb = a.aurycReadyCb || [], a.auryc = a.auryc || []; a.aurycEventPropertiesCb = a.aurycEventPropertiesCb || []; var e = document, r = e.createElement("script"), t = e.head || e.getElementsByTagName("head")[0], c = { src: "container.js", "data-cfasync": "false", async: "true", "data-vendor": "auryc", "data-role": "container", charset: "utf-8" }; for (var d in c) r.setAttribute(d, c[d]); t.appendChild(r); for (var n = ["setDisableTextCapture", "track", "identify", "addFBCustomData", "addUserProperties", "addSessionProperties", "addInternalSessionProperties", "getReplayUrl", "setFeedbackEnabled", "clearUserCookie", "addFBSubmitHandler", "addFBCancelHandler", "addEventProperties", "removeEventProperty", "removeAllEventProperties", "pause", "resume"], u = function (e) { return function () { var r = Array.prototype.slice.call(arguments, 0); if (e === "addEventProperties" || e === "removeEventProperty" || e === "removeAllEventProperties") { a.aurycEventPropertiesCb.push(function () { a.auryc[e] && a.auryc[e].apply(a.auryc, r) }) } else { a.aurycReadyCb.push(function () { a.auryc[e] && a.auryc[e].apply(a.auryc, r) }) } } }, s = 0; s < n.length; s++)a.auryc[n[s]] = u(n[s]) }(window);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+
+<body>
+  <h1>Heap masking test: Title redaction</h1>
+  <p>This is a test of the data-heap-redact-attributes feature of the Heap SDK...</p>
+</body>
+
+
+<script>
+  $(document).ready(()=> {
+    setTimeout(() => {
+    const div = document.createElement('div');
+    div.setAttribute('id', 'replayUrl');
+    div.innerText = auryc.getSessionMetadata().replayUrl
+    document.body.appendChild(div);
+  }, 2000);
+  });
+  
+</script>
+
+</html>

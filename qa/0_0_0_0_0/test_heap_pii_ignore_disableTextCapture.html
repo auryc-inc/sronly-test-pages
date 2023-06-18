@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        window._auryc_is_inner_frame_ =  true;
+        window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
+        window.heap = {"config":{"disableTextCapture":false}}
+    </script>
+    
+    <title>Heap: seDisableTextCapture</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,500,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <script data-cfasync="false" charset="utf-8">;!function(a){a.aurycReadyCb=a.aurycReadyCb||[],a.auryc=a.auryc||[];a.aurycEventPropertiesCb = a.aurycEventPropertiesCb||[];var e=document,r=e.createElement("script"),t=e.head||e.getElementsByTagName("head")[0],c={src:"container.js","data-cfasync":"false",async:"true","data-vendor":"auryc","data-role":"container",charset:"utf-8"};for(var d in c)r.setAttribute(d,c[d]);t.appendChild(r);for(var n=["setDisableTextCapture","track","identify","addFBCustomData","addUserProperties","addSessionProperties","addInternalSessionProperties","getReplayUrl","setFeedbackEnabled","clearUserCookie","addFBSubmitHandler","addFBCancelHandler","addEventProperties","removeEventProperty","removeAllEventProperties","pause","resume"],u=function(e){return function(){var r=Array.prototype.slice.call(arguments,0);if(e==="addEventProperties"||e==="removeEventProperty"||e==="removeAllEventProperties"){a.aurycEventPropertiesCb.push(function(){a.auryc[e]&&a.auryc[e].apply(a.auryc,r)})}else{a.aurycReadyCb.push(function(){a.auryc[e]&&a.auryc[e].apply(a.auryc,r)})}}},s=0;s<n.length;s++)a.auryc[n[s]]=u(n[s])}(window);</script>    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  </head>
+<body>
+<h1>Heap masking test: setDisableTextCapture</h1>
+<input type="text" id='notMasked'/>Normal text 2
+<hr/>
+<div class="some-app-class">
+  Not masked
+</div>
+<hr/>
+<div data-heap-redact-text="true" class="some-app-class">
+  This is a confidential div 2
+</div>
+<hr/>
+<div class="some-app-class">
+ Not confidential div 2
+</div>
+
+<button >Disable text capture</button>
+<br/>
+<input type="text" name='card_number_input' />card_number_input
+<br/>
+<input type="text" name='card_number_input2' />card_number_input2
+<br />
+<input type="text" name='cc'/>cc
+<br/>
+<input type="text" id='cc'/>cc
+<hr/>
+<input type="text" id='normal1'/>Normal text 1
+<br/>
+<input type="text" id='normal2'/>Normal text 2
+<hr/>
+<input type="text" name='_creditcard-1' data-heap-redact-text="true"/>_creditcard-1
+<br/>
+<input type="text"
+  data-heap-redact-text="true"
+  value="data-heap-redact-text"/>
+  data-heap-redact-text
+<br/>
+
+<input type="text" id='_creditcard-2'/>_creditcard-2
+<br/>
+<input type="text" name='cc_number' />cc_number
+<br />
+<input type="text" id='input_keep1' />input_keep1
+<br />
+<input type="text" id='input_keep2' />input_keep2
+<br />
+<input type="text" class='input_keep3' />input_keep3
+<br />
+<select name="ctl00$ctl01$ContentPlaceHolder$ContentPlaceHolder$PaymentInfotool$PaymentsInfoInput1$pr$ctl00$pi$pd$ExpirationMonthInputDropDownList"
+  id="ctl00_ctl01_ContentPlaceHolder_ContentPlaceHolder_PaymentInfotool_PaymentsInfoInput1_pr_ctl00_pi_pd_ExpirationMonthInputDropDownList"
+  class="expirationMonthInput">
+    <option>07/18</option>
+    <option>08/18</option>
+    <option>09/18</option>
+</select>
+</br>
+<input type="button" value='addInput' onclick="addDom()" />
+<div id="inputContainer"></div>
+<div id="container"
+  style="width: 550px; height: 400px; margin: 0 auto"></div>
+
+<div id="container2"
+  style="width: 550px; height: 400px;"></div>
+<script language="JavaScript">
+  function addDom() {
+    setTimeout(function(){
+      var node = document.createElement('div');
+      node.innerHTML = `
+          <input type="text" id="card_number_input-3" />card_number_input-3
+          </br>
+          <input type="text" name="_tcnum-4" />_ccnum-4
+          <br/>
+          <input type="text" class="input_keep3" />input_keep4
+          <br/>
+          <hr/>
+          <input type="text" id='normal1'/>Normal text 1
+          <br/>
+          <input type="text" id='normal2'/>Normal text 2
+          <br/>
+          <hr/>
+          <input type="text"
+            data-heap-redact-text="true"
+            value="data-heap-redact-text"/>
+            data-heap-redact-text
+          <br/>
+      `;
+      document.getElementById('inputContainer').appendChild(node);},
+      100);
+  }
+
+
+  $(document).ready(function () {
+    window.onbeforeunload = function () {
+      window.localStorage.removeItem('_ar_:behavior:ignoreHeapTextCapture');
+    }
+  });
+
+  $(document).ready(function () {
+    setTimeout(()=> {
+      window.localStorage.setItem('_ar_:behavior:ignoreHeapTextCapture', true)
+    });
+  });
+
+  $(document).ready(function () {
+    var title = {
+      text: 'Average Temperatures of Cities'
+    };
+    var subtitle = {
+      text: 'Source: worldClimate.com'
+    };
+    var xAxis = {
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    };
+    var yAxis = {
+      title: {
+        text: 'Temperature (\xB0C)'
+      },
+      plotLines: [{
+        value: 0,
+        width: 1,
+        color: '#808080'
+      }]
+    };
+    var tooltip = {
+      valueSuffix: '\xB0C'
+    }
+    var legend = {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+    };
+    var series = [{
+      name: 'Tokyo',
+      data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
+        26.5, 23.3, 18.3, 13.9, 9.6]
+    },
+    {
+      name: 'New York',
+      data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8,
+        24.1, 20.1, 14.1, 8.6, 2.5]
+    },
+    {
+      name: 'London',
+      data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0,
+        16.6, 14.2, 10.3, 6.6, 4.8]
+    }
+    ];
+
+    var json = {};
+    json.title = title;
+    json.subtitle = subtitle;
+    json.xAxis = xAxis;
+    json.yAxis = yAxis;
+    json.tooltip = tooltip;
+    json.legend = legend;
+    json.series = series;
+
+    $('#container').highcharts(json);
+  });
+</script>
+
+
+<script>
+  $(document).ready(()=> {
+    setTimeout(() => {
+    const div = document.createElement('div');
+    div.setAttribute('id', 'replayUrl');
+    div.innerText = auryc.getSessionMetadata().replayUrl
+    document.body.appendChild(div);
+  }, 2000);
+  });
+  
+</script>
+
+</body>
+
+</html>

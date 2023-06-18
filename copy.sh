@@ -1,3 +1,26 @@
+#!/bin/bash
+
+ROOT=./qa
+HTTP="/"
+OUTPUT="index.html" 
+
+i=0
+echo "<UL>" > $OUTPUT
+for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
+  path=`basename "$filepath"`
+  echo "  <LI>$path</LI>" >> $OUTPUT
+  echo "  <UL>" >> $OUTPUT
+  for i in `find "$filepath" -maxdepth 1 -mindepth 1 -type f| sort`; do
+    file=`basename "$i"`
+    echo "    <LI><a href=\"/$path/$file\">$file</a></LI>" >> $OUTPUT
+  done
+  echo "  </UL>" >> $OUTPUT
+done
+echo "</UL>" >> $OUTPUT
+
+
+
+
 # rm -rf reg
 # rm -rf new
 
@@ -41,14 +64,14 @@
 # cp ../jslib/tests/_lws_docroot_/BB.css new/3/
 # cp ../jslib/tests/_lws_docroot_/BB.css new/4/
 
-cp ../jslib/tests/_lws_docroot_/test.jpg  reg/1/
-cp ../jslib/tests/_lws_docroot_/test.jpg  reg/2/
-cp ../jslib/tests/_lws_docroot_/test.jpg  reg/3/
+# cp ../jslib/tests/_lws_docroot_/test.jpg  reg/1/
+# cp ../jslib/tests/_lws_docroot_/test.jpg  reg/2/
+# cp ../jslib/tests/_lws_docroot_/test.jpg  reg/3/
 
-cp ../jslib/tests/_lws_docroot_/test.jpg  new/1/
-cp ../jslib/tests/_lws_docroot_/test.jpg  new/2/
-cp ../jslib/tests/_lws_docroot_/test.jpg  new/3/
-cp ../jslib/tests/_lws_docroot_/test.jpg  new/4/
+# cp ../jslib/tests/_lws_docroot_/test.jpg  new/1/
+# cp ../jslib/tests/_lws_docroot_/test.jpg  new/2/
+# cp ../jslib/tests/_lws_docroot_/test.jpg  new/3/
+# cp ../jslib/tests/_lws_docroot_/test.jpg  new/4/
 
 
 

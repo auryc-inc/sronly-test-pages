@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!-- - feature flag true, heap disable true, new flag true, ignore true -> masked
+-->
+<html>
+<head>
+    <script type="text/javascript">
+        window._auryc_is_inner_frame_ =  true;
+        window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
+        window.heap = {"config":{"disableTextCapture":false}}
+    </script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,500,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      localStorage.setItem('_ar_:behavior:ignoreHeapTextCapture', true);
+      localStorage.setItem('_ar_:record:disableSRTextCapture', true);
+      localStorage.setItem('_ar_:record:isRedactTextEnabled', true);
+
+      localStorage.setItem('_ar_:record:srOnlyDisableTextCaptureEnabled', true);
+      </script>
+      
+    <link href='BB.css' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      document.addEventListener('scroll', function() {
+        document.getElementById('#test').offsetTop =  document.getElementById('#test').offsetTop + 100;
+      });
+
+      window.pageType="AurycTestPDP";
+    </script>
+
+
+    // setTimeout(function () {window.auryc.identify('test000000')}, 3000);
+
+    </script>
+    <script data-cfasync="false" charset="utf-8">;!function(a){a.aurycReadyCb=a.aurycReadyCb||[],a.auryc=a.auryc||[];a.aurycEventPropertiesCb = a.aurycEventPropertiesCb||[];var e=document,r=e.createElement("script"),t=e.head||e.getElementsByTagName("head")[0],c={src:"container.js","data-cfasync":"false",async:"true","data-vendor":"auryc","data-role":"container",charset:"utf-8"};for(var d in c)r.setAttribute(d,c[d]);t.appendChild(r);for(var n=["track","identify","addFBCustomData","addUserProperties","addSessionProperties","addInternalSessionProperties","getReplayUrl","setFeedbackEnabled","clearUserCookie","addFBSubmitHandler","addFBCancelHandler","addEventProperties","removeEventProperty","removeAllEventProperties","pause","resume"],u=function(e){return function(){var r=Array.prototype.slice.call(arguments,0);if(e==="addEventProperties"||e==="removeEventProperty"||e==="removeAllEventProperties"){a.aurycEventPropertiesCb.push(function(){a.auryc[e]&&a.auryc[e].apply(a.auryc,r)})}else{a.aurycReadyCb.push(function(){a.auryc[e]&&a.auryc[e].apply(a.auryc,r)})}}},s=0;s<n.length;s++)a.auryc[n[s]]=u(n[s])}(window);</script>
+    <script> auryc.addEventProperties({pageCategory: 'TestPage'}, {'scope': 'page'});</script>
+    <script> auryc.addFBCustomData({fbCustomData: '123'});</script>
+    <script> auryc.track('testDupEvent1');</script>
+    <script> auryc.track('testDupEvent2');</script>
+    <script> auryc.addSessionProperties({'testSessProp': '123'});</script>
+
+    <title>Auryc JS SDK Test Page -- local debug1</title>
+    <script> 
+      (function () {
+        var customData = {
+          'order_id': '123', 
+          'profile_id': '456', 
+          'server_instance':'instance_789'
+        };
+        console.log('calling addFBCustomData');
+          window.auryc.addFBCustomData(customData);
+
+       setTimeout(function() {
+         console.log('calling track evenet');
+         auryc.track('Test Event', {'test': 123});
+       }, 5000)   
+   })();
+    </script>
+    <script>
+      window['test_str_var'] = 'test_string_value';
+      var universal_variable = {
+        transaction: {
+          line_items: [
+            {name: "Underwear"},
+            {name: "Top"}
+          ],
+        }
+      };
+      window['universal_variable'] = universal_variable;
+      window['test_int_var'] = 123456;
+      function noopinhead() {
+        console.log('no op')
+      }
+
+      function removeAttr(id, attr) {
+        var node = document.getElementById(id);
+        node.removeAttribute(attr);
+      }
+
+      function setAttrNull(id, attr) {
+        var node = document.getElementById(id);
+        node.setAttribute(attr, null);
+      }
+    </script>
+    <script>
+      function changeStyle () {
+        var node = document.querySelectorAll('style#testStyle')[0];
+        node.innerHTML += ' .testStyle{color:red !important}';
+      }
+
+    </script>
+
+    <style id='testStyle'>
+      .testStyle {
+        color: blue
+      };
+    </style>
+     
+    <style>
+        body{
+          font-family: 'Open Sans', Sans-serif !important;
+          color: #4a4a4a;
+          margin: 0 auto;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          background: #f6f7f9 !important;
+          font-size: 14px;
+          height: 100%;
+          overflow-y: scroll;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          justify-content: center;
+          display: flex;
+        }
+        .container{
+          max-width: 960px;
+          justify-content: center;
+          display: grid;
+          grid-template-areas: 
+          'header header header '
+          'aside content content';
+        }
+        .pdiv {
+          border:5px solid red;
+        }
+        .header{
+          grid-area: header;
+        }
+        .aside{
+          grid-area: aside;
+        }
+        .content{
+          grid-area: content;
+        }
+    </style>
+    <style>
+      price-comparison__parts::after{
+        content:"";
+        background:url("data:image/svg+xml;utf8,<svg id='svg_bracket' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 81.5 434'>\\a     <title>bracket</title>\\a     <style> .svg_bracket-path { fill: red;}</style>\\a     <path class='svg_bracket-path' d='M427.18,576.5c-19.5,0-39.5-17.5-39.5-46.5V403c0-18.5-8.5-36-26-36V352c17.5,0,26-17.5,26-36V189c0-29,20-46.5,39.5-46.5h16v15h-16c-13.5,0-24.5,12.5-24.5,31.5V316c0,21-6,36.5-22.5,43.5,16.5,7,22.5,22.5,22.5,43.5V530c0,18.5,11,31.5,24.5,31.5h16v15Z' transform='translate(-361.68 -142.5)'/>\\a</svg>")        position:absolute;font-size:300px;line-height:300px;font-weight:100;transform:translate(-65%, -50%) scale(-1, -1);color:white;z-index:4;top:42%;left:calc(50% + (82px / 2));height:434px;width:82px}
+    </style>
+</head>
+<body>
+    <script>
+        function noopinbody() {
+          console.log('no op')
+        }
+
+        function changeProp() {
+          document.getElementById('testAutoCapture').innerText = 'Super Event Prop 2';
+        }
+      </script>
+<h3>
+      <div id='testAutoCapture'>
+        Super Event Prop 1
+      </div>
+      <button id='testAutoCaptureButton'>
+        Test auto capture
+      </button>
+      <button id='changePropValue' onclick="changeProp();">
+        Change event property value
+      </button>
+      <div class='auto_capture'>Value 1</div>
+      <div class='auto_capture'>Value 2</div>
+</h3>            
+<div class="container">
+  <div id="header" class="header" attr1="true">
+      <h1>Auryc JS SDK Test Page -- local debug</h1>
+      <h2>Using Beachbound reset styles</h2>
+      <label for='test_checkbox'> Check box</label>
+      <input id='test_checkbox' name='test_checkbox' type='checkbox' />
+      <button onclick="removeAttr('header', 'attr1')">Click to remove attribute</button>
+      <button onclick="setAttrNull('header', 'attr1')">Click to set null</button>
+
+  </div>
+  <div id="pii">
+    <h2> This div should be hidden</h2>
+  </div>
+  <div class='testStyle'>
+    Test chaning
+    <button onclick="changeStyle()">Change Style</button>
+  </div>
+  <div class="aside">
+   <a href='/test2.html#test'> Go To local Page 2 with hash</a>
+   <a href='#test'> Go To same page with hash</a>
+   <a href='?test'> Go To same page with query</a>
+   <a href='/test2.html'> Go To test 2</a>
+
+
+      <div id="instructions">
+        You need to have the following in /etc/hosts
+        <pre>
+          127.0.0.1 www.test.com
+          127.0.0.1 www.sub.test.com
+        </pre>
+      </div>
+      <div class='_ar_hide_'>
+          click me and check targetText: top level text
+        <div id='123'>
+          <div id='456'>
+            click me and check targetText: leaf level text
+          </div>
+        </div>
+      </div>
+      <a href='/test404.html' target="_blank"> 404 Page</a>
+      <br/>
+      <a href='http://www.sub.test.com:8887/test2.html' target="_blank"> Go To Different sub domain Page 2</a>
+      <br/>
+      <a href='http://www.sub.test.com:8887/test2.html'> Go To Different sub domain same tab Page 2</a>
+      <br/>
+    
+      <a href='http://www.test.com:8887/test2.html' target="_blank"> Go To Same Domain Page 2</a>
+      <br/>
+      <a href='http://www.test.com:8887/test2.html'> Go To Same Domain Same tab  Page 2</a>
+      <br/>
+      <a href='http://www.test12.com:8887/test2.html'> Go To Cross Domain Same tab Page 2</a>
+      <br/>
+      <a href='http://www.test12.com:8887/test2.html' target="_blank"> Go To Cross Domain Different tab Page 2 (Not working)</a>
+      <br/>
+    
+      <a href='javascript:;' id='open'> new window</a>
+  </div>
+  <div class="content">
+      <i class="fas fa-camera-retro fa-10x"></i>
+      <i class="fas fa-arrow-down fa-10x"></i>
+      <i class="fas fa-arrow-alt-circle-down fa-10x"></i>
+      <button onclick="window.open('https://www.google.com')">window.open('https://www.google.com')</button>
+      <button onclick="window.open('https://www.google.com?test=1')">window.open('https://www.google.com?test=1')</button>
+      <button onclick="window.open('https://www.google.com?test=1#hash=1')">window.open('https://www.google.com?test=1#hash=1')</button>
+      <button onclick="window.open('https://www.google.com#hash=1')">window.open('https://www.google.com?test=1#hash=1')</button>
+      <button onclick="window.open('#')">window.open('#')</button>
+      <button onclick="window.open('?')">window.open('?')</button>
+
+ 
+      <br/>
+      <button id='test1' class="c1" onclick="trackBtnClick('add to cart')">Add To Cart</button>
+      <button id='add' class="c1" onclick="addDom()">Add Dom</button><br/>
+      <button id='sleep' class="c1" onclick="sleep(20000)">Sleep for 20 secs</button><br/>
+      <div style="height:200px; width:400px; overflow:auto">
+      <p>According to <a href="/wiki/APICS" title="APICS">APICS</a> the definition of VOC is: Actual customer descriptions in words for the functions and features customers desire for goods and services. In the strict definition, as relates to quality function deployment (QFD), the term customer indicates the external customer of the supplying entity.</p>
+      <p><b>Voice of the customer</b> (VOC) is a term used in business and Information Technology (through <a href="javascript:;" title="ITIL">ITIL</a>, for example) to describe the in-depth process of capturing customer's expectations, preferences and aversions. Specifically, the Voice of the Customer is a <a href="/wiki/Market_research" title="Market research">market research</a> technique that produces a detailed set of customer wants and needs, organized into a hierarchical structure, and then prioritized in terms of relative importance and satisfaction with current alternatives. Voice of the Customer studies typically consist of both qualitative and quantitative research steps. They are generally conducted at the start of any new product, process, or service design initiative in order to better understand the customer's wants and needs, and as the key input for new product definition, <a href="/wiki/Quality_Function_Deployment" title="Quality Function Deployment" class="mw-redirect">Quality Function Deployment</a> (QFD), and the setting of detailed design specifications.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup></p>
+      <p>Much has been written about this process,<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup> and there are many possible ways to gather the information – <a href="/wiki/Focus_group" title="Focus group">focus groups</a>, individual interviews, <a href="/wiki/Contextual_inquiry" title="Contextual inquiry">contextual inquiry</a>, ethnographic techniques, etc. But all involve a series of structured in-depth interviews, which focus on the customers' experiences with current products or alternatives within the category under consideration. Needs statements are then extracted, organized into a more usable hierarchy, and then prioritized by the customers.</p>
+      <p>It is critical that the <a href="/wiki/Product_development" title="Product development" class="mw-redirect">product development</a> core team are involved in this process. They must be the ones who take the lead in defining the topic, designing the sample (i.e. the types of customers to include), generating the questions for the discussion guide, either conducting or observing and analyzing the interviews, and extracting and processing the needs statements.</p>
+      <p>According to <a href="/wiki/APICS" title="APICS">APICS</a> the definition of VOC is: Actual customer descriptions in words for the functions and features customers desire for goods and services. In the strict definition, as relates to quality function deployment (QFD), the term customer indicates the external customer of the supplying entity. <a rel="nofollow" class="external text" href="http://www.apics.org/dictionary/dictionary-information?ID=4591.0">[APICS dictionary - VOC]</a></p>
+    
+      </div>
+      <p><b>Voice of the customer</b> (VOC) is a term used in business and Information Technology (through <a href="javascript:;" title="ITIL">ITIL</a>, for example) to describe the in-depth process of capturing customer's expectations, preferences and aversions. Specifically, the Voice of the Customer is a <a href="/wiki/Market_research" title="Market research">market research</a> technique that produces a detailed set of customer wants and needs, organized into a hierarchical structure, and then prioritized in terms of relative importance and satisfaction with current alternatives. Voice of the Customer studies typically consist of both qualitative and quantitative research steps. They are generally conducted at the start of any new product, process, or service design initiative in order to better understand the customer's wants and needs, and as the key input for new product definition, <a href="/wiki/Quality_Function_Deployment" title="Quality Function Deployment" class="mw-redirect">Quality Function Deployment</a> (QFD), and the setting of detailed design specifications.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup></p>
+      <p>Much has been written about this process,<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup> and there are many possible ways to gather the information – <a href="/wiki/Focus_group" title="Focus group">focus groups</a>, individual interviews, <a href="/wiki/Contextual_inquiry" title="Contextual inquiry">contextual inquiry</a>, ethnographic techniques, etc. But all involve a series of structured in-depth interviews, which focus on the customers' experiences with current products or alternatives within the category under consideration. Needs statements are then extracted, organized into a more usable hierarchy, and then prioritized by the customers.</p>
+      <p>It is critical that the <a href="/wiki/Product_development" title="Product development" class="mw-redirect">product development</a> core team are involved in this process. They must be the ones who take the lead in defining the topic, designing the sample (i.e. the types of customers to include), generating the questions for the discussion guide, either conducting or observing and analyzing the interviews, and extracting and processing the needs statements.</p>
+      <p>According to <a href="/wiki/APICS" title="APICS">APICS</a> the definition of VOC is: Actual customer descriptions in words for the functions and features customers desire for goods and services. In the strict definition, as relates to quality function deployment (QFD), the term customer indicates the external customer of the supplying entity. <a rel="nofollow" class="external text" href="http://www.apics.org/dictionary/dictionary-information?ID=4591.0">[APICS dictionary - VOC]</a></p>
+    
+    
+      <br/>
+    
+      <br/>
+      <button id='dis' class="c1" onclick="disable()">disable</button><br/>
+      <button id='enable' class="c1" onclick="enable()">enable</button><br/>
+      <button id='identify' class="c3" onclick="domain()">domain</button>
+      <br/>
+      <div id='container'>
+        <input type="text" name='userName'/>
+      </div>
+      <button id='update' class="c1" onclick="update()">update</button><br/>
+      <div>
+        <span id='percent'>1</span>
+      </div>
+      <a href='javascript:;' id='testLink'>testLink</a>
+    
+      <button id='generate error' class="c3" onclick="genError(false)">Generate js error</button>
+      <br/>
+    
+      <button id='generate error' class="c3" onclick="genError(true)">Generate different js error</button>
+      <br/>
+    
+      <button id='generate 200 ajax' class="c3" onclick="send200GetAjax(true)">GET 200 Ajax Status</button>
+      <br/>
+      <button id='generate 401 ajax' class="c3" onclick="send401GetAjax(true)">GET 401 Ajax Status</button>
+      <br/>
+    
+      <button id='generate 400 ajax' class="c3" onclick="send400Ajax(true)">Get 400 Ajax status</button>
+      <br/>
+    
+      <button id='generate 200 post ajax' class="c3" onclick="send200PostAjax(true)">POST 200 Ajax Status</button>
+      <br/>
+      <button id='generate 401 post ajax' class="c3" onclick="send401PostAjax(true)">POST 401 Ajax Status</button>
+      <br/>
+    
+      <button id='generate 400 post ajax' class="c3" onclick="send400PostAjax(true)">POST 400 Ajax status</button>
+      <br/>
+    
+      <button id='generate 201 post ajax' class="c3" onclick="send201PostAjax(true)">POST 201 Ajax status</button>
+      <br/>
+    
+      <button id='generate 500 post ajax' class="c3" onclick="send500PostAjax(true)">POST 500 Ajax status</button>
+      <br/>
+    
+      <button id='getByXhr' class="c3" onclick="getByXhr(true)">GET 200 By xhr</button>
+      <br/>    
+      <div>
+          <img src='./test.jpg'></img>
+        </div>
+        <hr/>
+        <div style='width:100px; height:100px;border:5px solid red;'>
+          add dom2
+        </div>
+      
+        <div class='pdiv'>
+          add dom3
+        </div>
+      
+        <hr/>
+  </div>
+ 
+  <script>
+      var percent =1;
+      var index = 1;
+
+      console.log('window.name', window.name);
+      if(window.opener) {
+        let time = Date.now();
+        // window.opener.postMessage('childpage...'+time,'*');
+      }
+      window.aurycReadyCb.push(function(){
+          console.log('readyCb called. feedback enabled');
+      });
+
+      function addProp () {
+        // auryc.addUserProperties({'name': 'test','lastName': 'user','email': 'testUser6@auryc.com'});
+      }
+
+      function domain () {
+        var frame = document.getElementById('frameDemo');
+        console.log('frame', frame);
+      }
+
+      function trackBtnClick(action, name, value) {
+          // auryc.track('event', {category: 'eCommerce', action: action, name: name, value: value});
+      }
+
+      function trackBtnSubmit(action, name, value) {
+          // alert('submit');
+      }
+
+      function addDom() {
+        var node = document.createElement('div');
+        node.style = 'width:100px; height:100px; background:#ccc;';
+        node.innerHTML = 'div';
+        // document.getElementsByTagName('body')[0].appendChild(node);
+        document.getElementById('testLink').appendChild(node);
+      }
+
+      function update() {
+        percent++;
+        var div = document.getElementById('percent');
+        div.innerHTML = percent+'%';
+      }
+
+      function disable() {
+        document.getElementById('dis').disabled=true;
+      }
+
+      function enable() {
+        document.getElementById('dis').disabled=false;
+      }
+      document.getElementById('open').onclick = function () {
+        window.open('test2.html');
+      }
+
+      function genError(newError) {
+          if (!newError) {
+              var t;
+              console.log(t.toLowerCase());
+          } else {
+              var y;
+              console.log(t.toUpperCase());
+          }
+      }
+
+      function send200GetAjax () {
+        $.ajax({
+          url: 'https://feedback-api-dev.auryc.com/view/feedback-json?fid=9jw4LltvmKYaST8P01YzItyfB3mzLQBM&version=33&type=fb'
+        }).done(function () {
+          console.log('send200GetAjax done');
+        });
+      }
+
+      function send401GetAjax() {
+        $.ajax({
+          url: 'https://feedback-api-dev.auryc.com/view/feedback-json2?fid=9jw4LltvmKYaST8P01YzItyfB3mzLQBM&version=33&type=fb'
+        }).done(function () {
+          console.log('send404GetAjax done');
+        });
+      }
+
+      function send400Ajax() {
+        $.ajax({
+          url: 'https://feedback-api-dev.auryc.com/view/feedback-json?ffid=9jw4LltvmKYaST8P01YzItyfB3mzLQBM&version=33&type=fb'
+        }).done(function () {
+          console.log('send400GetAjax done');
+        });
+      }
+
+      function send200PostAjax () {
+        $.ajax({
+          type: 'POST',
+          url: 'https://feedback-api-dev.auryc.com/submit-feedback',
+          data: 'XRlS2V5IjoiYXVyeWMtY29tLTU2MiIsIm1pZCI6IkpOYW5vaFM3SG5iYUhpd2lveHRySjJrVkl0a1FBTERaIiwiZ2xvYmFsSWQiOiI5Njk5ZDEyZjZhMmJjYzk2M2FlOWU0YTE5MmIwYmE4MSIsInNlc3Npb25JZCI6IjU3MjE3NzI1NTlmN2RhMzdhNTM5MWQzZDcwMDkyZjRkIiwicmVzcG9uc2VzIjpbeyJxdWVzdGlvbklkIjoiNTQyOTY5Njg0Mjk5MTYyMiIsImFuc3dlcklkIjoiNTQyOTY5Njg0Mjk5MTYyMkEwMDEifSx7InF1ZXN0aW9uSWQiOiI1NDI5Njk2NjM2ODA1MjA1IiwiYW5zd2VySWQiOiI1NDI5Njk2NjM2ODA1MjA1QTAxMSJ9LHsicXVlc3Rpb25JZCI6IjU0Mjk2OTY4ODU5MzA0NTUiLCJhbnN3ZXJUZXh0IjoiIn1dLCJ2ZXJzaW9uIjoxfQ==eyJza'
+        }).done(function () {
+          console.log('send200PostAjax done');
+        });
+      }
+
+      function send401PostAjax() {
+        $.ajax({
+          type: 'POST',
+          url: 'https://feedback-api-dev.auryc.com/submit-feedback2',
+          data: 'XXX'
+        }).done(function () {
+          console.log('send401PostAjax done');
+        });
+      }
+
+      function send400PostAjax() {
+        $.ajax({
+          type: 'POST',
+          url: 'https://feedback-api-dev.auryc.com/submit-feedback',
+          data: 'RlS2V5IjoiYXVyeWMtY29tLTU2MiIsIm1pZCI6IkpOYW5vaFM3SG5iYUhpd2lveHRySjJrVkl0a1FBTERaIiwiZ2xvYmFsSWQiOiI5Njk5ZDEyZjZhMmJjYzk2M2FlOWU0YTE5MmIwYmE4MSIsInNlc3Npb25JZCI6IjU3MjE3NzI1NTlmN2RhMzdhNTM5MWQzZDcwMDkyZjRkIiwicmVzcG9uc2VzIjpbeyJxdWVzdGlvbklkIjoiNTQyOTY5Njg0Mjk5MTYyMiIsImFuc3dlcklkIjoiNTQyOTY5Njg0Mjk5MTYyMkEwMDEifSx7InF1ZXN0aW9uSWQiOiI1NDI5Njk2NjM2ODA1MjA1IiwiYW5zd2VySWQiOiI1NDI5Njk2NjM2ODA1MjA1QTAxMSJ9LHsicXVlc3Rpb25JZCI6IjU0Mjk2OTY4ODU5MzA0NTUiLCJhbnN3ZXJUZXh0IjoiIn1dLCJ2ZXJzaW9uIjoxfQ==eyJza'
+      }).done(function () {
+          console.log('send400PostAjax done');
+        });
+      }
+
+      function send201PostAjax() {
+        $.ajax({
+          type: 'POST',
+          url: 'http://uba-tracking-dev.auryc.com/collect',
+          headers: {
+            'X-Authorized-Identity': 'auryc-com-562',
+            'X-Authorized-Token': 'b1ac43f7f2c2895b95f461536b0068b8',
+            'Content-Type': 'application/json'
+          },
+          data: '[{"siteId":"auryc-com-562","userId":"a5f7b60967d0494fd660bf1d7f5e0618","sessionId":"873bbaa9b0d73bade93dd8d43e08b637","name":"Auryc JS SDK Test Page -- local debug","content":"http://localhost:8080/test_local_debug.html","type":"PAGEVIEW","currentContextName":"Auryc JS SDK Test Page -- local debug","currentContextPath":"http://localhost:8080/test_local_debug.html","timeSinceFirstVisit":1526332280671,"timeSinceLastVisit":1526332280667,"libraryName":"Web","libraryVersion":"0.1.11","generationTime":6,"source":{"protocol":"http","domain":"localhost","port":"8080","path":"/test_local_debug.html","name":"Auryc JS SDK Test Page -- local debug","content":"http://localhost:8080/test_local_debug.html","type":"URL"},"tags":["sid:de35433-10280669-57d3-6d62-5454d","gsid:873bbaa9b0d73bade93dd8d43e08b637"],"payloads":{},"browser":"Chrome","os":"Mac OS X","referer":"http://localhost:8080/","widthOfScreenResolution":2560,"heightOfScreenResolution":1440,"visitTime":1526332280671}]'
+        }).done(function() {
+          console.log('send201PostAjax')
+        });
+      }
+
+      function send500PostAjax() {
+        $.ajax({
+          type: 'POST',
+          url: 'http://uba-tracking-dev.auryc.com/collect',
+          headers: {
+            'X-Authorized-Identity': 'auryc-com-562',
+            'X-Authorized-Token': 'b1ac43f7f2c2895b95f461536b0068b8',
+            'Content-Type': 'application/json'
+          },
+          data: '[{"siteId":"auryc-com-562","sessionId":"873bbaa9b0d73bade93dd8d43e08b637","name":"Auryc JS SDK Test Page -- local debug","content":"http://localhost:8080/test_local_debug.html","type":"PAGEVIEW","currentContextName":"Auryc JS SDK Test Page -- local debug","currentContextPath":"http://localhost:8080/test_local_debug.html","timeSinceFirstVisit":1526332280671,"timeSinceLastVisit":1526332280667,"libraryName":"Web","libraryVersion":"0.1.11","generationTime":6,"source":{"protocol":"http","domain":"localhost","port":"8080","path":"/test_local_debug.html","name":"Auryc JS SDK Test Page -- local debug","content":"http://localhost:8080/test_local_debug.html","type":"URL"},"tags":["sid:de35433-10280669-57d3-6d62-5454d","gsid:873bbaa9b0d73bade93dd8d43e08b637"],"payloads":{},"browser":"Chrome","os":"Mac OS X","referer":"http://localhost:8080/","widthOfScreenResolution":2560,"heightOfScreenResolution":1440,"visitTime":1526332280671}]'
+        }).done(function() {
+          console.log('send500PostAjax')
+        });
+      }
+
+      function getByXhr() {
+        let url = 'https://feedback-api-dev.auryc.com/view/feedback-json?fid=9jw4LltvmKYaST8P01YzItyfB3mzLQBM&version=33&type=fb&index='+index;
+        let xmlHttp = new window.XMLHttpRequest();
+        index++;
+        xmlHttp.onreadystatechange = function () {
+          if (xmlHttp.readyState == 4) {
+            if (xmlHttp.responseText && xmlHttp.responseText.length > 1) {
+              console.log('xmlHttp.responseText: ', xmlHttp.responseText.substr(0, 100));
+            }
+          }
+        };
+        xmlHttp.open('GET', url);
+        xmlHttp.send(null);
+      }
+
+      function sleep(milliseconds) {
+      var start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds){
+          break;
+        }
+      }
+    }
+      </script>
+
+<script>
+  // test all APIs
+  window.callAurycApi = function callAurycApi(prefix, fbenabled) {
+    let prop = {};
+    prop[prefix + '_prop'] = 'testvalue';
+    console.log('setting properties:', prop);
+    auryc.track(prefix + '_track', prop);
+    auryc.pause();
+    auryc.setFeedbackEnabled(fbenabled);
+    console.log('paused')
+    setTimeout(function () {
+      console.log('resumed')
+      auryc.resume();
+      auryc.addUserProperties(prop);
+      auryc.addSessionProperties(prop);
+      auryc.identify(prefix + '_id');
+      auryc.addFBCustomData(prop);
+      auryc.getReplayUrl(function (url) {console.log(url)});
+      auryc.addFBSubmitHandler(6013, function(d){console.log('fb submitted', d);});
+      auryc.addFBShownHandler(6013, function(d){console.log('fb shown', d);});
+      auryc.addFBCancelHandler(6013, function(d){console.log('fb canceled', d);});
+    }, 2000)
+
+  }
+
+  
+</script>
+</div>
+</body>
+
+</html>
