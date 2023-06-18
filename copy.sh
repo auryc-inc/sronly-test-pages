@@ -12,7 +12,7 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   echo "  <UL>" >> $OUTPUT
   for i in `find "$filepath" -maxdepth 1 -mindepth 1 -type f| sort`; do
     file=`basename "$i"`
-    echo "    <LI><a href=\"/$path/$file\">$file</a></LI>" >> $OUTPUT
+    echo "    <LI><a href=\"/qa/$path/$file\">$file</a></LI>" >> $OUTPUT
   done
   echo "  </UL>" >> $OUTPUT
 done
