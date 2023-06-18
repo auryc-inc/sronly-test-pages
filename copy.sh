@@ -5,7 +5,8 @@ HTTP="/"
 OUTPUT="index.html" 
 
 i=0
-echo "<div style='position:absolute;padding: 1em; right: 0;margin: 1em 2em;font-size: 20px; border: 1px solid green; color: green'>"  >$OUTPUT
+echo "<html><body stle="margin: 0 auto" > $OUTPUT
+echo "<div style='position:absolute;padding: 1em; right: 0;margin: 1em 2em;font-size: 20px; border: 1px solid green; color: green'>"  >>$OUTPUT
 echo "<OL>" >> $OUTPUT
 echo "    <li>srOnlyDisableTextCaptureEnabled</li>" >> $OUTPUT
 echo "    <li>disableTextCapture</li>" >> $OUTPUT
@@ -27,6 +28,7 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   echo "  </UL>" >> $OUTPUT
 done
 echo "</UL>" >> $OUTPUT
+echo "</body></html>" >> $OUTPUT
 
 
 
