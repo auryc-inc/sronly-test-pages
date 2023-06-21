@@ -12,8 +12,6 @@ async function run() {
 
     const containerText = await readFile(path.resolve(__dirname, 'container.js'), 'utf8');
 
-    console.log('containerText', containerText);
-
     for (let i = 0; i < 2; i++) {
         for (let j = 0; j < 2; j++) {
             for (let k = 0; k < 2; k++) {

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+node scripts/copy.js
+
 ROOT=./qa
 HTTP="/"
 OUTPUT="index.html" 
