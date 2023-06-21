@@ -4,6 +4,11 @@
 <html>
 <head>
     <script type="text/javascript">
+        localStorage.removeItem('_ar_:behavior:ignoreHeapTextCapture');
+        localStorage.removeItem('_ar_:record:disableSRTextCapture');
+        localStorage.removeItem('_ar_:record:isRedactTextEnabled');
+        localStorage.removeItem('_ar_:record:srOnlyDisableTextCaptureEnabled');
+
         window._auryc_is_inner_frame_ =  true;
         window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
         window.heap = {"config":{"disableTextCapture":false}}
@@ -12,7 +17,6 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,500,700' rel='stylesheet' type='text/css'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
       
     <link href='BB.css' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
