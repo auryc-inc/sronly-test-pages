@@ -74,6 +74,11 @@ async function updateHTML(
     };
     const scrpt = `
     <script type="text/javascript">
+        localStorage.removeItem('_ar_:behavior:ignoreHeapTextCapture');
+        localStorage.removeItem('_ar_:record:disableSRTextCapture');
+        localStorage.removeItem('_ar_:record:isRedactTextEnabled');
+        localStorage.removeItem('_ar_:record:srOnlyDisableTextCaptureEnabled');
+
         window._auryc_is_inner_frame_ =  true;
         window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
         window.heap = ${JSON.stringify(ret)}
