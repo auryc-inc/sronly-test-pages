@@ -22,6 +22,8 @@ echo "</OL>" >> $OUTPUT
 echo "</div>" >> $OUTPUT
 
 ROOT=./qa/new
+
+echo "<h4> New Tests" >> $OUTPUT
 echo "<UL>" >> $OUTPUT
 for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   path=`basename "$filepath"`
@@ -33,6 +35,8 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   done
   echo "  </UL>" >> $OUTPUT
 done
+
+echo "<h4> Regression Test Cases" >> $OUTPUT
 
 ROOT=./qa/reg
 for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
