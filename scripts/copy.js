@@ -53,8 +53,7 @@ async function runregTestCases() {
 
     for (let j = 0; j < 2; j++) {
         for (let k = 0; k < 2; k++) {
-            for (l = 0; l < 2; l++) {
-
+            for (let l = 0; l < 2; l++) {
                 for (const file of files) {
                     const htmlString = htmlStrings[file];
                     const newHTML = await updateHTML(null, j, k, l, null, htmlString);
@@ -65,7 +64,6 @@ async function runregTestCases() {
                     const newContainer = await updateContainerReg(null, j, k, l, null, containerText);
                     await writeFile(path.join(__dirname, '..', pathname + '/container.js'), newContainer);
                 }
-
             }
         }
     }
