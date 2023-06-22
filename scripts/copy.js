@@ -15,12 +15,15 @@ async function runNewTestCases() {
     for (let i = 0; i < 2; i++) {
         for (let j = 0; j < 2; j++) {
             for (let k = 0; k < 2; k++) {
-                for (l = 0; l < 2; l++) {
-                    for (m = 0; m < 2; m++) {
+                for (let l = 0; l < 2; l++) {
+                    for (let m = 0; m < 2; m++) {
+                        console.log(i, j, k, l, m)
                         for (const file of files) {
                             const htmlString = htmlStrings[file];
                             const newHTML = await updateHTML(i, j, k, l, m, htmlString);
                             const pathname = `qa/new/${i}_${j}_${k}_${l}_${m}/`
+                            console.log(pathname)
+
                             await mkdir(pathname, { recursive: true });
                             await writeFile(path.join(__dirname, '..', pathname + '/' + file), newHTML);
 
