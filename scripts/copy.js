@@ -20,7 +20,7 @@ async function run() {
                         for (const file of files) {
                             const htmlString = htmlStrings[file];
                             const newHTML = await updateHTML(i, j, k, l, m, htmlString);
-                            const pathname = `qa/${i}_${j}_${k}_${l}_${m}/`
+                            const pathname = `qa/new/${i}_${j}_${k}_${l}_${m}/`
                             await mkdir(pathname, { recursive: true });
                             await writeFile(path.join(__dirname, '..', pathname + '/' + file), newHTML);
 

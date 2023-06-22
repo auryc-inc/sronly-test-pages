@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p qa/new
+mkdir -p qa/reg
+
 node scripts/copy.js
 
 ROOT=./qa
