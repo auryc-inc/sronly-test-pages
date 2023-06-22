@@ -1,4 +1,4 @@
-#!/bin/bash
+a#!/bin/bash
 
 mkdir -p qa/new
 mkdir -p qa/reg
@@ -12,6 +12,7 @@ OUTPUT="index.html"
 i=0
 echo "<html><body style='font-family:verdana ' >"  > $OUTPUT
 echo "<div style='position:fixed; top: 0; padding: 1em; right: 0;margin: 1em 2em; color: #fff; background: darkslategrey;'>"  >>$OUTPUT
+echo "<a href="#new-cases">" >> $OUTPUT
 echo "<b>New Cases</b>" >> $OUTPUT
 echo "<OL style='margin: 0 auto;'> " >> $OUTPUT
 echo "    <li>srOnlyDisableTextCaptureEnabled</li>" >> $OUTPUT
@@ -20,19 +21,21 @@ echo "    <li>ignoreHeapTextCapture</li>" >> $OUTPUT
 echo "    <li>isRedactTextEnabled</li>" >> $OUTPUT
 echo "    <li>disableSRTextCapture</li>" >> $OUTPUT
 echo "</OL>" >> $OUTPUT
+echo "</a>" >> $OUTPUT
 
+echo "<a href="#regress-cases">" >> $OUTPUT
 echo "<b>Rgression Cases</b>" >> $OUTPUT
 echo "<OL style='margin: 0 auto;'> " >> $OUTPUT
 echo "    <li>disableTextCapture</li>" >> $OUTPUT
 echo "    <li>ignoreHeapTextCapture</li>" >> $OUTPUT
 echo "    <li>isRedactTextEnabled</li>" >> $OUTPUT
 echo "</OL>" >> $OUTPUT
-
+echo "</a>" >> $OUTPUT
 echo "</div>" >> $OUTPUT
 
 ROOT=./qa/new
 
-echo "<h1> New Test Cases </h1><hr/>" >> $OUTPUT
+echo "<h1 id="new-cases"> New Test Cases </h1><hr/>" >> $OUTPUT
 echo "<UL>" >> $OUTPUT
 for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   path=`basename "$filepath"`
@@ -45,7 +48,7 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   echo "  </UL>" >> $OUTPUT
 done
 
-echo "<h1> Regression Test Cases </h1><hr/>" >> $OUTPUT
+echo "<h1 id="regress-cases"> Regression Test Cases </h1><hr/>" >> $OUTPUT
 
 ROOT=./qa/reg
 
