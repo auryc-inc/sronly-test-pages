@@ -1,7 +1,7 @@
 const { readFile, writeFile, readdir, mkdir } = require('fs').promises;
 const path = require('path');
 
-async function run() {
+async function runNewTestCases() {
     const htmlStrings = {}
 
     const files = await readdir(path.resolve(__dirname, 'htmls'));
@@ -33,6 +33,62 @@ async function run() {
         }
     }
 }
+
+
+
+async function runregTestCases() {
+    const htmlStrings = {}
+
+    const files = await readdir(path.resolve(__dirname, 'htmls'));
+    for (const file of files) {
+        const htmlString = await readFile(path.resolve(__dirname, 'htmls', file), 'utf8');
+        htmlStrings[file] = htmlString;
+    }
+
+    const containerText = await readFile(path.resolve(__dirname, 'container.js'), 'utf8');
+
+
+    for (let j = 0; j < 2; j++) {
+        for (let k = 0; k < 2; k++) {
+            for (l = 0; l < 2; l++) {
+
+                for (const file of files) {
+                    const htmlString = htmlStrings[file];
+                    const newHTML = await updateHTML(i, j, k, l, m, htmlString);
+                    const pathname = `qa/reg/${j}_${k}_${l}/`
+                    await mkdir(pathname, { recursive: true });
+                    await writeFile(path.join(__dirname, '..', pathname + '/' + file), newHTML);
+
+                    const newContainer = await updateContainerReg(null, j, k, l, null, containerText);
+                    await writeFile(path.join(__dirname, '..', pathname + '/container.js'), newContainer);
+                }
+
+            }
+        }
+    }
+}
+
+function updateContainerReg(
+    srOnlyDisableTextCaptureEnabled,
+    disableTextCapture,
+    ignoreHeapTextCapture,
+    isRedactTextEnabled,
+    disableSRTextCapture,
+    cntrTxt
+) {
+    const behaveTxt = `
+        //behaviorConfig//
+        "ignoreHeapTextCapture": ${!!ignoreHeapTextCapture},
+        `;
+    const recordTxt = `
+        //recordConfig//
+        "isRedactTextEnabled": ${!!isRedactTextEnabled},
+        `;
+    return cntrTxt.replace('//behaviorConfig//', behaveTxt)
+        .replace('//recordConfig//', recordTxt);
+
+}
+
 
 function updateContainer(
     srOnlyDisableTextCaptureEnabled,
@@ -85,4 +141,4 @@ async function updateHTML(
     return htmlString.replace('<head>', '<head>' + scrpt);
 }
 
-run();
+runNewTestCases();
