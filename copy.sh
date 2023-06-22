@@ -11,19 +11,28 @@ OUTPUT="index.html"
 
 i=0
 echo "<html><body style='font-family:verdana ' >"  > $OUTPUT
-echo "<div style='position:sticky; top: 0; padding: 1em; right: 0;margin: 1em 2em;font-size: 20px; color: #fff; background: darkslategrey;'>"  >>$OUTPUT
-echo "<OL style='margin: 0 auto; width: 40em;'> " >> $OUTPUT
+echo "<div style='position:fixed; top: 0; padding: 1em; right: 0;margin: 1em 2em; color: #fff; background: darkslategrey;'>"  >>$OUTPUT
+echo "<b>New Cases</b>" >> $OUTPUT
+echo "<OL style='margin: 0 auto;'> " >> $OUTPUT
 echo "    <li>srOnlyDisableTextCaptureEnabled</li>" >> $OUTPUT
 echo "    <li>disableTextCapture</li>" >> $OUTPUT
 echo "    <li>ignoreHeapTextCapture</li>" >> $OUTPUT
 echo "    <li>isRedactTextEnabled</li>" >> $OUTPUT
 echo "    <li>disableSRTextCapture</li>" >> $OUTPUT
 echo "</OL>" >> $OUTPUT
+
+echo "<b>Rgression Cases</b>" >> $OUTPUT
+echo "<OL style='margin: 0 auto;'> " >> $OUTPUT
+echo "    <li>disableTextCapture</li>" >> $OUTPUT
+echo "    <li>ignoreHeapTextCapture</li>" >> $OUTPUT
+echo "    <li>isRedactTextEnabled</li>" >> $OUTPUT
+echo "</OL>" >> $OUTPUT
+
 echo "</div>" >> $OUTPUT
 
 ROOT=./qa/new
 
-echo "<h4> New Tests" >> $OUTPUT
+echo "<h1> New Test Cases </h1><hr/>" >> $OUTPUT
 echo "<UL>" >> $OUTPUT
 for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   path=`basename "$filepath"`
@@ -36,21 +45,21 @@ for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
   echo "  </UL>" >> $OUTPUT
 done
 
-echo "<h4> Regression Test Cases" >> $OUTPUT
+echo "<h1> Regression Test Cases </h1><hr/>" >> $OUTPUT
 
 ROOT=./qa/reg
-for filepath in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
-  path=`basename "$filepath"`
+
+for filepath1 in `find "$ROOT" -maxdepth 1 -mindepth 1 -type d| sort`; do
+  path=`basename "$filepath1"`
   echo "  <LI>$path</LI>" >> $OUTPUT
   echo "  <UL>" >> $OUTPUT
-  for i in `find "$filepath" -maxdepth 1 -mindepth 1 -type f| sort`; do
+  for i in `find "$filepath1" -maxdepth 1 -mindepth 1 -type f| sort`; do
     file=`basename "$i"`
     echo "    <LI><a href=\"/qa/reg/$path/$file\">$file</a></LI>" >> $OUTPUT
   done
   echo "  </UL>" >> $OUTPUT
 done
 
-echo "</UL>" >> $OUTPUT
 echo "</body></html>" >> $OUTPUT
 
 
