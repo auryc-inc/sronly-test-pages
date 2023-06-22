@@ -349,8 +349,6 @@ recordConfig = {
   
         //recordConfig//
         "isRedactTextEnabled": false,
-        "disableSRTextCapture": true,
-        "srOnlyDisableTextCaptureEnabled": false,
         
   "enabled": true,
   "cb": 1,
@@ -400,7 +398,7 @@ ruleengineConfig = {
 behaviorConfig = {
   
         //behaviorConfig//
-        "ignoreHeapTextCapture": true,
+        "ignoreHeapTextCapture": false,
         
   "enabled": true,
   "preloadDomContent": true,

@@ -54,7 +54,7 @@ async function runregTestCases() {
 
                 for (const file of files) {
                     const htmlString = htmlStrings[file];
-                    const newHTML = await updateHTML(i, j, k, l, m, htmlString);
+                    const newHTML = await updateHTML(null, j, k, l, null, htmlString);
                     const pathname = `qa/reg/${j}_${k}_${l}/`
                     await mkdir(pathname, { recursive: true });
                     await writeFile(path.join(__dirname, '..', pathname + '/' + file), newHTML);
@@ -142,3 +142,4 @@ async function updateHTML(
 }
 
 runNewTestCases();
+runregTestCases();

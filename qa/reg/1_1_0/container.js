@@ -349,8 +349,6 @@ recordConfig = {
   
         //recordConfig//
         "isRedactTextEnabled": false,
-        "disableSRTextCapture": true,
-        "srOnlyDisableTextCaptureEnabled": false,
         
   "enabled": true,
   "cb": 1,

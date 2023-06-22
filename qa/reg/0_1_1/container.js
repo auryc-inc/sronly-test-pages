@@ -348,9 +348,7 @@ feedbackConfig = {
 recordConfig = {
   
         //recordConfig//
-        "isRedactTextEnabled": false,
-        "disableSRTextCapture": true,
-        "srOnlyDisableTextCaptureEnabled": false,
+        "isRedactTextEnabled": true,
         
   "enabled": true,
   "cb": 1,

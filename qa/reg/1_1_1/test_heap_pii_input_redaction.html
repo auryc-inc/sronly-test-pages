@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+        localStorage.removeItem('_ar_:behavior:ignoreHeapTextCapture');
+        localStorage.removeItem('_ar_:record:disableSRTextCapture');
+        localStorage.removeItem('_ar_:record:isRedactTextEnabled');
+        localStorage.removeItem('_ar_:record:srOnlyDisableTextCaptureEnabled');
+
+        window._auryc_is_inner_frame_ =  true;
+        window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
+        window.heap = {"config":{"disableTextCapture":true}}
+    </script>
+    
+    <meta charset="UTF-8">
+    <title>Redact Input Text</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,500,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+      h1 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #d32f2f;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+label {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+input[type="text"], select, textarea, input[type="search"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d32f2f;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+  outline: none;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus, input[type="search"]:focus {
+  border: 2px solid #d32f2f;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #d32f2f;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+input[type="submit"]:hover {
+  background-color: #b71c1c;
+}
+
+.form-wrapper {
+  width: 50%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+</style>
+    <script data-cfasync="false" charset="utf-8">;!function(a){a.aurycReadyCb=a.aurycReadyCb||[],a.auryc=a.auryc||[];a.aurycEventPropertiesCb = a.aurycEventPropertiesCb||[];var e=document,r=e.createElement("script"),t=e.head||e.getElementsByTagName("head")[0],c={src:"container.js","data-cfasync":"false",async:"true","data-vendor":"auryc","data-role":"container",charset:"utf-8"};for(var d in c)r.setAttribute(d,c[d]);t.appendChild(r);for(var n=["setDisableTextCapture","track","identify","addFBCustomData","addUserProperties","addSessionProperties","addInternalSessionProperties","getReplayUrl","setFeedbackEnabled","clearUserCookie","addFBSubmitHandler","addFBCancelHandler","addEventProperties","removeEventProperty","removeAllEventProperties","pause","resume"],u=function(e){return function(){var r=Array.prototype.slice.call(arguments,0);if(e==="addEventProperties"||e==="removeEventProperty"||e==="removeAllEventProperties"){a.aurycEventPropertiesCb.push(function(){a.auryc[e]&&a.auryc[e].apply(a.auryc,r)})}else{a.aurycReadyCb.push(function(){a.auryc[e]&&a.auryc[e].apply(a.auryc,r)})}}},s=0;s<n.length;s++)a.auryc[n[s]]=u(n[s])}(window);</script>    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+  </head>
+  <body id="body">
+    <h1>Redact Input Text</h1>
+    <div class="container">
+      <form class="form-wrapper">
+        <label for="text-input-redact">Redacted Text Input:</label>
+        <input type="text" id="text-input" name="text-input-redact" placeholder="Enter text..." data-heap-redact-text>
+        <label for="text-input-hide">Hidden Text Input:</label>
+        <input type="text" id="text-input" name="text-input-hide" placeholder="Enter text..." data-heap-ignore>
+        <label for="text-input">Default Text Input:</label>
+        <input type="text" id="text-input" name="text-input" placeholder="Enter text...">
+
+        <label for="select-redact">Redacted Select:</label>
+        <select id="select" name="select-redact" data-heap-redact-text>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+        <label for="select-hide">Hidden Select:</label>
+        <select id="select" name="select-hide" data-heap-ignore>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+        <label for="select">default Select:</label>
+        <select id="select" name="select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+
+        <label for="textarea-redact">Redacted Textarea:</label>
+        <textarea id="textarea" name="textarea-redact" rows="4" placeholder="Enter your message..." data-heap-redact-text></textarea>
+        <label for="textarea-hide">Hidden Textarea:</label>
+        <textarea id="textarea" name="textarea-hide" rows="4" placeholder="Enter your message..." data-heap-ignore></textarea>
+        <label for="textarea">Default Textarea:</label>
+        <textarea id="textarea" name="textarea" rows="4" placeholder="Enter your message..."></textarea>
+
+        <label for="search-redact">Redacted Search Bar:</label>
+        <input type="search" id="search" name="search-redact" placeholder="Search..." data-heap-redact-text>
+        <label for="search-hide">Hidden Search Bar:</label>
+        <input type="search" id="search" name="search-hide" placeholder="Search..." data-heap-ignore>
+        <label for="search">Default Search Bar:</label>
+        <input type="search" id="search" name="search" placeholder="Search...">
+
+        <div style="display: flex; flex-wrap: nowrap; justify-content: space-between;">
+        <input type="submit" value="Redacted Submit" data-heap-redact-text>
+        <input type="submit" value="Hidden Submit" data-heap-ignore>
+        <input type="submit" value="Default Submit">
+        </div>
+      </form>
+      <input type="button" value='Load More' onclick="addDOM()" />
+    </div>
+
+    <script language="JavaScript">
+      
+
+      function addDOM() {
+        setTimeout(function () {
+          var node = document.createElement('div');
+          node.classList.add('container');
+          node.innerHTML = `
+          <form class="form-wrapper">
+            <label for="text-input-redact">Redacted Text Input:</label>
+            <input type="text" id="text-input" name="text-input-redact" placeholder="Enter text..." data-heap-redact-text>
+            <label for="text-input-hide">Hidden Text Input:</label>
+            <input type="text" id="text-input" name="text-input-hide" placeholder="Enter text..." data-heap-ignore>
+            <label for="text-input">Default Text Input:</label>
+            <input type="text" id="text-input" name="text-input" placeholder="Enter text...">
+
+            <label for="select-redact">Redacted Select:</label>
+            <select id="select" name="select-redact" data-heap-redact-text>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+            <label for="select-hide">Hidden Select:</label>
+            <select id="select" name="select-hide" data-heap-ignore>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+            <label for="select">default Select:</label>
+            <select id="select" name="select">
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </select>
+
+            <label for="textarea-redact">Redacted Textarea:</label>
+            <textarea id="textarea" name="textarea-redact" rows="4" placeholder="Enter your message..." data-heap-redact-text></textarea>
+            <label for="textarea-hide">Hidden Textarea:</label>
+            <textarea id="textarea" name="textarea-hide" rows="4" placeholder="Enter your message..." data-heap-ignore></textarea>
+            <label for="textarea">Default Textarea:</label>
+            <textarea id="textarea" name="textarea" rows="4" placeholder="Enter your message..."></textarea>
+
+            <label for="search-redact">Redacted Search Bar:</label>
+            <input type="search" id="search" name="search-redact" placeholder="Search..." data-heap-redact-text>
+            <label for="search-hide">Hidden Search Bar:</label>
+            <input type="search" id="search" name="search-hide" placeholder="Search..." data-heap-ignore>
+            <label for="search">Default Search Bar:</label>
+            <input type="search" id="search" name="search" placeholder="Search...">
+
+            <input type="submit" value="Redacted Submit" data-heap-redact-text>
+            <input type="submit" value="Hidden Submit" data-heap-ignore>
+            <input type="submit" value="Default Submit">
+          </form>
+          `;
+          document.getElementById('body').appendChild(node);
+        }, 100);
+      }
+    </script>
+  </body>
+  </html>
