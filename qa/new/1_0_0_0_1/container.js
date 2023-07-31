@@ -421,7 +421,7 @@ behaviorConfig = {
   "trackingMode": "new",
   "trackResource": true,
   "doNotTrack": {
-    "blocked": { ".*": "input[id='new_card_0_num'],input[id='new_card_0_cvv'],select[id='new_card_0_month'],select[id='new_card_0_year'],input[id='new_card_1_num'], input[id='new_card_1_cvv'],input[id='number'],select[id='validThruYear'],select[id='validThruMonth'],select[id='new_card_1_month'],select[id='new_card_1_year'],input[id='new_card_2_num'],input[id='new_card_2_cvv'],select[id='new_card_2_month'],select[id='new_card_2_year'],input[id='new_card_3_num'],input[id='new_card_3_cvv'],select[id='new_card_3_month'],select[id='new_card_3_year'],div[id='pii']" },
+    "blocked": { ".*": ".hide-this,.hide-that,input[id='new_card_0_num'],input[id='new_card_0_cvv'],select[id='new_card_0_month'],select[id='new_card_0_year'],input[id='new_card_1_num'], input[id='new_card_1_cvv'],input[id='number'],select[id='validThruYear'],select[id='validThruMonth'],select[id='new_card_1_month'],select[id='new_card_1_year'],input[id='new_card_2_num'],input[id='new_card_2_cvv'],select[id='new_card_2_month'],select[id='new_card_2_year'],input[id='new_card_3_num'],input[id='new_card_3_cvv'],select[id='new_card_3_month'],select[id='new_card_3_year'],div[id='pii']" },
     "ip": {
       // "wl": ["24.38.87.12", "12.199.206.122", "207.140.63.242", "206.81.16.", "3.112.172.182", "27.26.*"],
       // "bl": ["3.112.172.182", "206.81.16.17"]
