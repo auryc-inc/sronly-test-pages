@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<head>
+  <script src="./test-common.js"></script>
+
+  <!-- Styles  -->
+  <!------------------------------------------>
+  <style type="text/css">
+    .section {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border: 1px solid #ccc;
+      min-width: 20em;
+      padding: .5em;
+      margin: .2em;
+    }
+
+    .section>* {
+      margin: .2em;
+    }
+
+    .section>*>* {
+      margin: .2em;
+    }
+
+    .title {
+      font-family: monospace;
+      color: green;
+    }
+
+    html {
+      font-family: sans-serif;
+    }
+
+    .b1 {
+      border: 1px dashed red;
+      padding: 1em;
+    }
+
+    .debug-tools>* {
+      margin: .4em;
+    }
+
+    .debug-tools {
+      border-radius: .2em;
+      position: fixed;
+      bottom: 10em;
+      background-color: rgb(26, 141, 141);
+      color: white;
+      padding: .5em;
+    }
+
+    #dynami-content {
+      min-width: 20em;
+      min-height: 20em;
+      margin-top: 2em;
+      border-top: 1px solid #ccc;
+    }
+
+    .debug-tools a:visited,
+    .debug-tools a {
+      color: white;
+    }
+  </style>
+
+  <script data-cfasync="false"
+    charset="utf-8">; !function (a) { a.aurycReadyCb = a.aurycReadyCb || [], a.auryc = a.auryc || []; a.aurycEventPropertiesCb = a.aurycEventPropertiesCb || []; var e = document, r = e.createElement("script"), t = e.head || e.getElementsByTagName("head")[0], c = { src: "http://localhost:8887/container.js", "data-cfasync": "false", async: "true", "data-vendor": "auryc", "data-role": "container", charset: "utf-8" }; for (var d in c) r.setAttribute(d, c[d]); t.appendChild(r); for (var n = ["track", "identify", "addFBCustomData", "addUserProperties", "addSessionProperties", "addInternalSessionProperties", "getReplayUrl", "setFeedbackEnabled", "clearUserCookie", "addFBSubmitHandler", "addFBCancelHandler", "addEventProperties", "removeEventProperty", "removeAllEventProperties", "pause", "resume"], u = function (e) { return function () { var r = Array.prototype.slice.call(arguments, 0); if (e === "addEventProperties" || e === "removeEventProperty" || e === "removeAllEventProperties") { a.aurycEventPropertiesCb.push(function () { a.auryc[e] && a.auryc[e].apply(a.auryc, r) }) } else { a.aurycReadyCb.push(function () { a.auryc[e] && a.auryc[e].apply(a.auryc, r) }) } } }, s = 0; s < n.length; s++)a.auryc[n[s]] = u(n[s]) }(window);</script>
+</head>
+
+<body>
+  <div id="root">
+    <!-- Exclusion by selectors -->
+    <!------------------------------------------>
+
+    <div class="section">
+      <div class="title">Always hidden</div>
+      <div class="title">By exclusiion : .hide-this</div>
+      <div>
+        <label for="name">.hide-this input</label>
+        <input class="hide-this" type="text" id="name" name="name" placeholder="Enter your name" value="HIDE_THIS">
+      </div>
+      <div>
+        <label class="hide-this" for="name">.hide-this div</label>
+        <div class="hide-this b1"> HIDE_THIS DIV</div>
+      </div>
+      <div>
+        <select class="hide-this" name="cars" id="cars">
+          <option value="HIDE_THIS">HIDE_THIS1</option>
+          <option value="HIDE_THIS">HIDE_THIS2</option>
+        </select>
+      </div>
+    </div>
+
+
+    <!-- CC fields -->
+    <!------------------------------------------>
+
+    <div class="section">
+      <div class="title">Always hidden</div>
+      <div class="title">Credit card info</div>
+      <div>
+        <label for="name"> input</label>
+        <input type="text" name="cc" placeholder="Enter your name" value="HIDE_THIS">
+      </div>
+      <div>
+        <label for="name"> input</label>
+        <input type="text" name="ccnum" placeholder="Enter your name" value="HIDE_THIS">
+      </div>
+
+    </div>
+
+
+    <!-- Long  number input always blocked -->
+    <!------------------------------------------>
+
+    <div class="section">
+      <div class="title">Always hidden</div>
+      <div class="title">Long numeric value</div>
+      <div>
+        <label for="name"> input</label>
+        <input type="text" id="cc" placeholder="Enter your name" value="123456789012345678">
+      </div>
+    </div>
+
+
+    <!-- inline directives -->
+    <!------------------------------------------>
+
+    <div class="section">
+      <div class="title">Always hidden</div>
+      <div class="title">data-heap-redact-text, data-heap-ignore, data-heap-redact-attributes</div>
+      <div>
+        <label for="text-input-redact">Redacted Text Input:</label>
+        <input type="text" id="text-input" name="text-input-redact" value="HIDE_THIS" placeholder="Enter text..."
+          data-heap-redact-text />
+      </div>
+      <div>
+        <label for="text-input-hide">Hidden Text Input:</label>
+        <input type="hidden" name="text-input-hide" value="HIDE_THIS" placeholder="Enter text..." data-heap-ignore />
+      </div>
+      <div data-heap-redact-attributes>
+        HIDE_THIS
+        <label for="text-input-redact-attributes">Redacted Text Input:</label>
+        <input type="text" id="text-input" name="text-input-redact-attributes" value="HIDE_THIS" />
+      </div>
+    </div>
+
+    <!-- PLAIN TEXT -->
+    <!------------------------------------------>
+
+    <div class="section">
+      <div class="title">PLAIN_TEXT</div>
+      <div class="title">No local directive</div>
+      <div>
+        <label for="text-input-redact">Redacted Text Input:</label>
+        <input type="text" placeholder="Enter text..." value="PLAIN_TEXT" />
+      </div>
+      <div>
+        <label for="text-input-hide">Hidden Text Input:</label>
+        <input type="hidden" id="text-input" placeholder="Enter text..." value="PLAIN_TEXT" />
+      </div>
+      <div>
+        <label for="text-input-redact-attributes">PLAIN_TEXT:</label>
+        <select name="cars" id="cars">
+          <option value="PLAIN_TEXT">PLAIN_TEXT1</option>
+          <option value="PLAIN_TEXT">PLAIN_TEXT2</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="dynami-content">
+      <div class="title">Loading dynamically added form.....</div>
+    </div>
+    <!-- PLAY LINK -->
+    <!------------------------------------------>
+  </div>
+
+
+  <div class="debug-tools" id="debug-tools">
+    <div id="replay-link">
+      <script>
+        window.addEventListener('load', function () {
+          setTimeout(function () {
+            document.getElementById('replay-link').innerHTML = '<a href="' + auryc.getSessionMetadata().replayUrl + '" target="_blank">Replay Link</a>';
+          }, 1000);
+        });
+      </script>
+      Loading link....
+    </div>
+    <button onclick="clearAndReload()">Reset and Reload</button>
+  </div>
+
+
+
+</body>
+
+</html>
