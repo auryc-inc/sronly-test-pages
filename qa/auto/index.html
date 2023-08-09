@@ -183,6 +183,9 @@
         window.addEventListener('load', function () {
           setTimeout(function () {
             document.getElementById('replay-link').innerHTML = '<a href="' + auryc.getSessionMetadata().replayUrl + '" target="_blank">Replay Link</a>';
+            const urlContainer = document.createElement('div');
+            urlContainer.textContent = auryc.getSessionMetadata().replayUrl;
+            document.body.appendChild(urlContainer);
           }, 1000);
         });
       </script>
