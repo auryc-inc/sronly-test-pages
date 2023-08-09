@@ -72,12 +72,12 @@ window.Worker = function (url) {
   return inst;
 };
 
-function clearAndReload() {
+async function clearAndReload() {
   localStorage.clear();
   location.reload();
   cookieStore.getAll().then((cookies) => {
-    cookies.forEach(({ name }) => {
-      cookieStore.delete(name);
+    cookies.forEach(async ({ name }) => {
+      await cookieStore.delete(name);
     });
   });
 }
