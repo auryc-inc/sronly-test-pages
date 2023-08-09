@@ -74,12 +74,14 @@ window.Worker = function (url) {
 
 async function clearAndReload() {
   localStorage.clear();
-  location.reload();
-  cookieStore.getAll().then((cookies) => {
+  const cookies = await cookieStore.getAll();
+  cookies.then((cookies) => {
     cookies.forEach(async ({ name }) => {
-      await cookieStore.delete(name);
+      const ret = await cookieStore.delete(name);
+      console.log('deleted', name, ret);
     });
   });
+  location.reload();
 }
 
 
