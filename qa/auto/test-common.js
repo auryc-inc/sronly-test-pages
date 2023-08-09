@@ -72,20 +72,19 @@ window.Worker = function (url) {
   return inst;
 };
 
-async function clearAndReload() {
+function clearAndReload() {
   localStorage.clear();
-  const cookies = await cookieStore.getAll();
-
-  cookies.forEach(async ({ name }) => {
-    const ret2 = await cookieStore.delete({name, domain: 'auryc.dev', path: '/'});
-    console.log('deleted', name, ret2);
+  cookieStore.getAll().then((cookies) => {
+    cookies.forEach(({ name }) => {
+      cookieStore.delete(name);
+    });
   });
-
   location.reload();
 }
 
 
 window.addEventListener('load', () => {
+  document.getElementById('test-case-id').value = testId;
   setTimeout(() => {
     const container = document.getElementById('dynami-content');
     container.innerHTML = '';
@@ -96,7 +95,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener('load', () => {
   setTimeout(() => {
-    const inputs = [...document.querySelectorAll('input')];
+    const inputs = [...document.querySelectorAll('#root input')];
     const timer = setInterval(() => {
       const input = inputs.shift();
       if (!input) {
@@ -109,3 +108,31 @@ window.addEventListener('load', () => {
     }, 300);
   }, 5000);
 });
+
+
+const loadPrev = () => {
+  let tid = parseInt(document.getElementById('test-case-id').value) - 1;
+  if (tid < 0) {
+    tid = 0;
+  }
+  localStorage.clear();
+  location.href = location.href.split('?')[0] + `?q=${tid}`;
+};
+
+const loadNext = () => {
+  let tid = parseInt(document.getElementById('test-case-id').value) + 1;
+  if (tid > 31) {
+    tid = 31;
+  }
+  localStorage.clear();
+  location.href = location.href.split('?')[0] + `?q=${tid}`;
+};
+
+const goto = (e) => {
+  let tid = parseInt(document.getElementById('test-case-id').value);
+  if (tid > 31 || tid < 0) {
+    tid = 0;
+  }
+  localStorage.clear();
+  location.href = location.href.split('?')[0] + `?q=${tid}`;
+};
