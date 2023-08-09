@@ -176,7 +176,7 @@
     <!------------------------------------------>
   </div>
 
-
+  
   <div class="debug-tools" id="debug-tools">
     <div id="replay-link">
       <script>
@@ -185,7 +185,8 @@
             document.getElementById('replay-link').innerHTML = '<a href="' + auryc.getSessionMetadata().replayUrl + '" target="_blank">Replay Link</a>';
             const urlContainer = document.createElement('div');
             urlContainer.textContent = auryc.getSessionMetadata().replayUrl;
-            document.body.appendChild(urlContainer);
+            document.body.insertBefore(urlContainer, document.getElementById('root'));
+            // document.body.appendChild(urlContainer);
           }, 1000);
         });
       </script>
