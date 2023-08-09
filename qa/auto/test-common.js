@@ -2,38 +2,38 @@ const urlParams = new URLSearchParams(window.location.search);
 const testId = urlParams.get('q') || 0;
 
 const truthTable = [
-  [1, 0, 0, 1, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [0, 1, 0, 1, 0, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [1, 1, 0, 1, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [1, 0, 1, 1, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [1, 1, 1, 1, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [0, 1, 0, 1, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [1, 1, 1, 0, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [1, 0, 0, 0, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [0, 1, 0, 0, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [1, 0, 1, 0, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [0, 1, 0, 0, 0, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [1, 1, 0, 0, 1, ['1234567890','HIDE_THIS', 'PLAINE_TEXT']],
-  [1, 0, 0, 0, 0, ['1234567890','HIDE_THIS']],
-  [0, 1, 1, 1, 1, ['1234567890','HIDE_THIS']],
-  [0, 1, 1, 1, 0, ['1234567890','HIDE_THIS']],
-  [1, 0, 1, 1, 0, ['1234567890','HIDE_THIS']],
-  [0, 0, 1, 0, 0, ['1234567890','HIDE_THIS']],
-  [0, 0, 1, 0, 1, ['1234567890','HIDE_THIS']],
-  [0, 1, 1, 0, 0, ['1234567890','HIDE_THIS']],
-  [1, 0, 1, 0, 0, ['1234567890','HIDE_THIS']],
-  [0, 0, 1, 1, 0, ['1234567890','HIDE_THIS']],
-  [1, 1, 0, 0, 0, ['1234567890','HIDE_THIS']],
-  [1, 1, 1, 1, 0, ['1234567890','HIDE_THIS']],
-  [0, 0, 1, 1, 1, ['1234567890','HIDE_THIS']],
-  [0, 0, 0, 0, 0, ['1234567890','HIDE_THIS']],
-  [1, 0, 0, 1, 0, ['1234567890','HIDE_THIS']],
-  [1, 1, 0, 1, 0, ['1234567890','HIDE_THIS']],
-  [0, 0, 0, 1, 0, ['1234567890','HIDE_THIS']],
-  [0, 0, 0, 0, 1, ['1234567890','HIDE_THIS']],
-  [0, 1, 1, 0, 1, ['1234567890','HIDE_THIS']],
-  [0, 0, 0, 1, 1, ['1234567890','HIDE_THIS']],
-  [1, 1, 1, 0, 0, ['1234567890','HIDE_THIS']]
+  [1, 0, 0, 1, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [0, 1, 0, 1, 0, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [1, 1, 0, 1, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [1, 0, 1, 1, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [1, 1, 1, 1, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [0, 1, 0, 1, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [1, 1, 1, 0, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [1, 0, 0, 0, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [0, 1, 0, 0, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [1, 0, 1, 0, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [0, 1, 0, 0, 0, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [1, 1, 0, 0, 1, ['1234567890', 'HIDE_THIS', 'PLAINE_TEXT']],
+  [1, 0, 0, 0, 0, ['1234567890', 'HIDE_THIS']],
+  [0, 1, 1, 1, 1, ['1234567890', 'HIDE_THIS']],
+  [0, 1, 1, 1, 0, ['1234567890', 'HIDE_THIS']],
+  [1, 0, 1, 1, 0, ['1234567890', 'HIDE_THIS']],
+  [0, 0, 1, 0, 0, ['1234567890', 'HIDE_THIS']],
+  [0, 0, 1, 0, 1, ['1234567890', 'HIDE_THIS']],
+  [0, 1, 1, 0, 0, ['1234567890', 'HIDE_THIS']],
+  [1, 0, 1, 0, 0, ['1234567890', 'HIDE_THIS']],
+  [0, 0, 1, 1, 0, ['1234567890', 'HIDE_THIS']],
+  [1, 1, 0, 0, 0, ['1234567890', 'HIDE_THIS']],
+  [1, 1, 1, 1, 0, ['1234567890', 'HIDE_THIS']],
+  [0, 0, 1, 1, 1, ['1234567890', 'HIDE_THIS']],
+  [0, 0, 0, 0, 0, ['1234567890', 'HIDE_THIS']],
+  [1, 0, 0, 1, 0, ['1234567890', 'HIDE_THIS']],
+  [1, 1, 0, 1, 0, ['1234567890', 'HIDE_THIS']],
+  [0, 0, 0, 1, 0, ['1234567890', 'HIDE_THIS']],
+  [0, 0, 0, 0, 1, ['1234567890', 'HIDE_THIS']],
+  [0, 1, 1, 0, 1, ['1234567890', 'HIDE_THIS']],
+  [0, 0, 0, 1, 1, ['1234567890', 'HIDE_THIS']],
+  [1, 1, 1, 0, 0, ['1234567890', 'HIDE_THIS']]
 ];
 
 const conf = truthTable[testId];
@@ -75,12 +75,12 @@ window.Worker = function (url) {
 async function clearAndReload() {
   localStorage.clear();
   const cookies = await cookieStore.getAll();
-  cookies.then((cookies) => {
-    cookies.forEach(async ({ name }) => {
-      const ret = await cookieStore.delete(name);
-      console.log('deleted', name, ret);
-    });
+
+  cookies.forEach(async ({ name }) => {
+    const ret = await cookieStore.delete(name);
+    console.log('deleted', name, ret);
   });
+
   location.reload();
 }
 
