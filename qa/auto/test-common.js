@@ -77,9 +77,8 @@ async function clearAndReload() {
   const cookies = await cookieStore.getAll();
 
   cookies.forEach(async ({ name }) => {
-    const ret1 = await cookieStore.delete({name, domain: 'cdn.auryc.dev', path: '/'});
     const ret2 = await cookieStore.delete({name, domain: 'auryc.dev', path: '/'});
-    console.log('deleted', name, ret1, ret2);
+    console.log('deleted', name, ret2);
   });
 
   location.reload();
