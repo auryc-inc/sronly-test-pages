@@ -93,21 +93,21 @@ window.addEventListener('load', () => {
 });
 
 
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const inputs = [...document.querySelectorAll('#root input')];
-    const timer = setInterval(() => {
-      const input = inputs.shift();
-      if (!input) {
-        clearInterval(timer);
-        return;
-      }
-      const val = input && input.value;
-      input.focus();
-      input.value = val + '-' + testId;
-    }, 300);
-  }, 5000);
-});
+// window.addEventListener('load', () => {
+//   setTimeout(() => {
+//     const inputs = [...document.querySelectorAll('#root input')];
+//     const timer = setInterval(() => {
+//       const input = inputs.shift();
+//       if (!input) {
+//         clearInterval(timer);
+//         return;
+//       }
+//       const val = input && input.value;
+//       input.focus();
+//       input.value = val + '-' + testId;
+//     }, 300);
+//   }, 5000);
+// });
 
 
 const loadPrev = () => {
