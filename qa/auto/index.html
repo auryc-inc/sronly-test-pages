@@ -2,7 +2,7 @@
 
 <head>
   <script src="./test-common.js"></script>
-
+  <title>PII test</title>
   <!-- Styles  -->
   <!------------------------------------------>
   <style type="text/css">
@@ -45,7 +45,8 @@
     .debug-tools {
       border-radius: .2em;
       position: fixed;
-      bottom: 10em;
+      bottom: 20em;
+      right: 0;
       background-color: rgb(26, 141, 141);
       color: white;
       padding: .5em;
@@ -65,7 +66,11 @@
   </style>
 
   <script data-cfasync="false"
-    charset="utf-8">; !function (a) { a.aurycReadyCb = a.aurycReadyCb || [], a.auryc = a.auryc || []; a.aurycEventPropertiesCb = a.aurycEventPropertiesCb || []; var e = document, r = e.createElement("script"), t = e.head || e.getElementsByTagName("head")[0], c = { src: "container.js", "data-cfasync": "false", async: "true", "data-vendor": "auryc", "data-role": "container", charset: "utf-8" }; for (var d in c) r.setAttribute(d, c[d]); t.appendChild(r); for (var n = ["track", "identify", "addFBCustomData", "addUserProperties", "addSessionProperties", "addInternalSessionProperties", "getReplayUrl", "setFeedbackEnabled", "clearUserCookie", "addFBSubmitHandler", "addFBCancelHandler", "addEventProperties", "removeEventProperty", "removeAllEventProperties", "pause", "resume"], u = function (e) { return function () { var r = Array.prototype.slice.call(arguments, 0); if (e === "addEventProperties" || e === "removeEventProperty" || e === "removeAllEventProperties") { a.aurycEventPropertiesCb.push(function () { a.auryc[e] && a.auryc[e].apply(a.auryc, r) }) } else { a.aurycReadyCb.push(function () { a.auryc[e] && a.auryc[e].apply(a.auryc, r) }) } } }, s = 0; s < n.length; s++)a.auryc[n[s]] = u(n[s]) }(window);</script>
+    charset="utf-8">; !function (a) {
+        a.aurycReadyCb = a.aurycReadyCb || [], a.auryc = a.auryc || [];
+        a.aurycEventPropertiesCb = a.aurycEventPropertiesCb || [];
+        var e = document, r = e.createElement("script"), t = e.head || e.getElementsByTagName("head")[0], c = { src: '/container.js', "data-cfasync": "false", async: "true", "data-vendor": "auryc", "data-role": "container", charset: "utf-8" }; for (var d in c) r.setAttribute(d, c[d]); t.appendChild(r); for (var n = ["track", "identify", "addFBCustomData", "addUserProperties", "addSessionProperties", "addInternalSessionProperties", "getReplayUrl", "setFeedbackEnabled", "clearUserCookie", "addFBSubmitHandler", "addFBCancelHandler", "addEventProperties", "removeEventProperty", "removeAllEventProperties", "pause", "resume"], u = function (e) { return function () { var r = Array.prototype.slice.call(arguments, 0); if (e === "addEventProperties" || e === "removeEventProperty" || e === "removeAllEventProperties") { a.aurycEventPropertiesCb.push(function () { a.auryc[e] && a.auryc[e].apply(a.auryc, r) }) } else { a.aurycReadyCb.push(function () { a.auryc[e] && a.auryc[e].apply(a.auryc, r) }) } } }, s = 0; s < n.length; s++)a.auryc[n[s]] = u(n[s])
+      }(window);</script>
 </head>
 
 <body>
@@ -76,12 +81,17 @@
     <div class="section">
       <div class="title">Always hidden</div>
       <div class="title">By exclusiion : .hide-this</div>
+      <div class="hide-this">
+        <label for="name">.hide-this on parent div</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" value="HIDE_THIS">
+      </div>
+
       <div>
         <label for="name">.hide-this input</label>
         <input class="hide-this" type="text" id="name" name="name" placeholder="Enter your name" value="HIDE_THIS">
       </div>
-      <div>
-        <label class="hide-this" for="name">.hide-this div</label>
+      <div class="hide-this">
+        <label for="name">.hide-this div</label>
         <div class="hide-this b1"> HIDE_THIS DIV</div>
       </div>
       <div>
@@ -199,6 +209,7 @@
       <button onclick="loadNext()">Next</button>
     </div>
   </div>
+
 
 
 

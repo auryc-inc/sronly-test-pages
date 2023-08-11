@@ -39,7 +39,6 @@ const truthTable = [
 const conf = truthTable[testId];
 
 const setConfig = (config) => {
-  window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
   window._auryc_is_inner_frame_ = true;
   localStorage.setItem('_ar_:record:srOnlyDisableTextCaptureEnabled', !!conf[0]);
   window.heap = { config: { disableTextCapture: !!conf[1] } };
@@ -72,19 +71,29 @@ window.Worker = function (url) {
   return inst;
 };
 
-function clearAndReload() {
+async function clearAndReload(shoudlReload = true) {
   localStorage.clear();
-  cookieStore.getAll().then((cookies) => {
-    cookies.forEach(({ name }) => {
-      cookieStore.delete(name);
-    });
+  const allCookies = await cookieStore.getAll();
+  console.log('>>> all', allCookies);
+
+  allCookies.forEach(async ({ name }) => {
+    const v = await cookieStore.delete(name);
+    console.log('>>> v', v, name);
+
+    try {
+      await cookieStore.set({ name, value: 's', "sameSite": "none", "domain": "pages.github.io", "expires": 1 });
+    } catch (e) {
+      console.error(e);
+    }
   });
-  location.reload();
+
+  if (shoudlReload) {
+    location.reload();
+  }
 }
 
 
 window.addEventListener('load', () => {
-  
   setTimeout(() => {
     document.getElementById('test-case-id').value = testId;
     const container = document.getElementById('dynami-content');
@@ -111,29 +120,29 @@ window.addEventListener('load', () => {
 // });
 
 
-const loadPrev = () => {
+const loadPrev = async () => {
   let tid = parseInt(document.getElementById('test-case-id').value) - 1;
   if (tid < 0) {
     tid = 0;
   }
-  localStorage.clear();
+  await clearAndReload(false);
   location.href = location.href.split('?')[0] + `?q=${tid}`;
 };
 
-const loadNext = () => {
+const loadNext = async () => {
   let tid = parseInt(document.getElementById('test-case-id').value) + 1;
   if (tid > 31) {
     tid = 31;
   }
-  localStorage.clear();
+  await clearAndReload(false);
   location.href = location.href.split('?')[0] + `?q=${tid}`;
 };
 
-const goto = (e) => {
+const goto = async (e) => {
   let tid = parseInt(document.getElementById('test-case-id').value);
   if (tid > 31 || tid < 0) {
     tid = 0;
   }
-  localStorage.clear();
+  await clearAndReload(false);
   location.href = location.href.split('?')[0] + `?q=${tid}`;
 };
