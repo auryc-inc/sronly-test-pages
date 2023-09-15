@@ -11,7 +11,21 @@
         window._auryc_is_inner_frame_ =  true;
         window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
         window.heap = {"config":{"disableTextCapture":false}}
-    </script>
+window.addEventListener('load', function() {
+setTimeout(function() {
+  auryc.setDisableTextCapture(false);
+}, 2000);
+
+setTimeout(function() {
+  const newDiv = document.createElement('div');
+  newDiv.setAttribute('id', 'replayUrl');
+  newDiv.innerText = "hello word";
+
+  document.body.appendChild(newDiv);
+
+}, 3000);
+
+});    </script>
     
   <title>Heap heap-ignore</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,500,700" rel="stylesheet"

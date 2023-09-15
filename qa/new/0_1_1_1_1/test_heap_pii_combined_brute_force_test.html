@@ -11,6 +11,21 @@
         window._auryc_is_inner_frame_ =  true;
         window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
         window.heap = {"config":{"disableTextCapture":true}}
+window.addEventListener('load', function() {
+setTimeout(function() {
+  auryc.setDisableTextCapture(true);
+}, 2000);
+
+setTimeout(function() {
+  const newDiv = document.createElement('div');
+  newDiv.setAttribute('id', 'replayUrl');
+  newDiv.innerText = "hello word";
+
+  document.body.appendChild(newDiv);
+
+}, 3000);
+
+});
     </script>
     
   <title>Heap brute-force</title>
