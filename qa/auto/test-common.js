@@ -72,6 +72,9 @@ window.Worker = function (url) {
     stringsNotToBeLogged.forEach((str) => {
       if (data.indexOf(str) > -1) {
         console.error('PII leak -> ', str, '->', data);
+        const li = document.createElement('li');
+        li.textContent = `PII leak -> ${str}}`;
+        document.getElementById('pii-leaks').appendChild(li);
       }
     });
     oldListener(...args);
