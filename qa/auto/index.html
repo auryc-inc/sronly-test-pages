@@ -5,65 +5,7 @@
   <title>PII test</title>
   <!-- Styles  -->
   <!------------------------------------------>
-  <style type="text/css">
-    .section {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      border: 1px solid #ccc;
-      min-width: 20em;
-      padding: .5em;
-      margin: .2em;
-    }
-
-    .section>* {
-      margin: .2em;
-    }
-
-    .section>*>* {
-      margin: .2em;
-    }
-
-    .title {
-      font-family: monospace;
-      color: green;
-    }
-
-    html {
-      font-family: sans-serif;
-    }
-
-    .b1 {
-      border: 1px dashed red;
-      padding: 1em;
-    }
-
-    .debug-tools>* {
-      margin: .4em;
-    }
-
-    .debug-tools {
-      border-radius: .2em;
-      position: fixed;
-      bottom: 20em;
-      right: 0;
-      background-color: rgb(26, 141, 141);
-      color: white;
-      padding: .5em;
-    }
-
-    #dynami-content {
-      min-width: 20em;
-      min-height: 20em;
-      margin-top: 2em;
-      border-top: 1px solid #ccc;
-    }
-
-    .debug-tools a:visited,
-    .debug-tools a {
-      color: white;
-    }
-  </style>
+<link rel="stylesheet" href="styles.css">
 
   <script data-cfasync="false"
     charset="utf-8">; !function (a) {
@@ -83,21 +25,21 @@
       <div class="title">By exclusiion : .hide-this</div>
       <div class="hide-this">
         <label for="name">.hide-this on parent div</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" value="HIDE_THIS">
+        <input type="text" id="name" name="name" placeholder="Enter your name" value="DO_NOT_TRACK">
       </div>
 
       <div>
         <label for="name">.hide-this input</label>
-        <input class="hide-this" type="text" id="name" name="name" placeholder="Enter your name" value="HIDE_THIS">
+        <input class="hide-this" type="text" id="name" name="name" placeholder="Enter your name" value="DO_NOT_TRACK">
       </div>
       <div class="hide-this">
         <label for="name">.hide-this div</label>
-        <div class="hide-this b1"> HIDE_THIS DIV</div>
+        <div class="hide-this b1"> DO_NOT_TRACK DIV</div>
       </div>
       <div>
         <select class="hide-this" name="cars" id="cars">
-          <option value="HIDE_THIS">HIDE_THIS1</option>
-          <option value="HIDE_THIS">HIDE_THIS2</option>
+          <option value="DO_NOT_TRACK">DO_NOT_TRACK1</option>
+          <option value="DO_NOT_TRACK">DO_NOT_TRACK2</option>
         </select>
       </div>
     </div>
@@ -111,11 +53,11 @@
       <div class="title">Credit card info</div>
       <div>
         <label for="name"> input</label>
-        <input type="text" name="cc" placeholder="Enter your name" value="HIDE_THIS">
+        <input type="text" name="cc" placeholder="Enter your name" value="__CC">
       </div>
       <div>
         <label for="name"> input</label>
-        <input type="text" name="ccnum" placeholder="Enter your name" value="HIDE_THIS">
+        <input type="text" name="ccnum" placeholder="Enter your name" value="__CCNUM">
       </div>
 
     </div>
@@ -142,17 +84,17 @@
       <div class="title">data-heap-redact-text, data-heap-ignore, data-heap-redact-attributes</div>
       <div>
         <label for="text-input-redact">Redacted Text Input:</label>
-        <input type="text" id="text-input" name="text-input-redact" value="HIDE_THIS" placeholder="Enter text..."
+        <input type="text" id="text-input" name="text-input-redact" value="DATA-HEAP-REDACT-TEXT" placeholder="Enter text..."
           data-heap-redact-text />
       </div>
       <div>
         <label for="text-input-hide">Hidden Text Input:</label>
-        <input type="hidden" name="text-input-hide" value="HIDE_THIS" placeholder="Enter text..." data-heap-ignore />
+        <input type="hidden" name="text-input-hide" value="DATA-HEAP-IGNORE" placeholder="Enter text..." data-heap-ignore />
       </div>
       <div data-heap-redact-attributes>
-        HIDE_THIS
+        DATA-HEAP-REDACT-TEXT
         <label for="text-input-redact-attributes">Redacted Text Input:</label>
-        <input type="text" id="text-input" name="text-input-redact-attributes" value="HIDE_THIS" />
+        <input type="text" id="text-input" name="text-input-redact-attributes" value="DATA-HEAP-REDACT-TEXT" />
       </div>
     </div>
 
