@@ -47,6 +47,7 @@ const conf = truthTable[testId];
 
 const setConfig = (config) => {
   window._auryc_is_inner_frame_ = true;
+  window['__AURYC_JSLIB_PATH__'] = 'https://cdn.auryc.dev/libs/latest/';
   localStorage.setItem('_ar_:record:srOnlyDisableTextCaptureEnabled', !!conf[0]);
   window.heap = { config: { disableTextCapture: !!conf[1] } };
   localStorage.setItem('_ar_:behavior:ignoreHeapTextCapture', !!conf[2]);
